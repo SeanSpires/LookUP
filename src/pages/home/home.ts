@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { PostModalPage } from '../modals/post-modal/post-modal';
 import { PostInterface } from './Post';
-import { CommentStmt } from '@angular/compiler';
-import { UserInterface } from './User';
 
 @Component({
   selector: 'page-home',
@@ -17,36 +15,43 @@ export class HomePage implements OnInit {
 
   posts: PostInterface[] = [
     {
-      title: "asd",
-      id: 45,
-      date: Date(),
-      mediaFiles: ["asd","asd"],
+      desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+      id: 1,
+      date: "16hr",
+      avatar: "../assets/imgs/sean.jpg",
+      userQuote: "Beans!",
+      mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Sean Spires",
-      comments: ["comment1", "2"],
-      favourites: 4
+      comments: 4,
+      favourites: 12
     },
     {
-      title: "asd",
-      id: 45,
-      date: Date(),
-      mediaFiles: ["asd","asd"],
+      desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+      id: 1,
+      date: "16hr",
+      avatar: "../assets/imgs/sean.jpg",
+      userQuote: "Beans!",
+      mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Sean Spires",
-      comments: ["comment1", "2"],
-      favourites: 4
+      comments: 4,
+      favourites: 12
     },
     {
-      title: "asd",
-      id: 45,
-      date: Date(),
-      mediaFiles: ["asd","asd"],
+      desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+      id: 1,
+      date: "16hr",
+      avatar: "../assets/imgs/sean.jpg",
+      userQuote: "Beans!",
+      mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Sean Spires",
-      comments: ["comment1", "2"],
-      favourites: 4
+      comments: 4,
+      favourites: 12
     }
   ]
 
   ngOnInit() {
-    
+          
+
 
   }
 

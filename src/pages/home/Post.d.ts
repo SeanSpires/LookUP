@@ -3,11 +3,13 @@ import { UserInterface } from "./User";
 
 export interface PostInterface {
     id: number;
-    title: string;
+    desc: string;
     date: string;
+    avatar: String,
+    userQuote: String,
     mediaFiles: string[]; // URI or Base64 Encoded
     user: string;
-    comments: string[];
+    comments: number;
     favourites: number;
 
 }
