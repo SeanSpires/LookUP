@@ -1,0 +1,88 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">Close</button>
+      </ion-buttons>
+      <ion-title>Create a LookUP Group</ion-title>
+    </ion-navbar>
+</ion-header>
+  
+  
+  <ion-content padding>
+      <ion-list>
+          <ion-list-header>
+              Group Details
+            </ion-list-header>
+          <ion-item>
+              <ion-input placeholder="Group Name"></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-input placeholder="Group Description"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-input placeholder="Group Photo"></ion-input>
+            </ion-item>          
+        </ion-list>
+        <ion-list radio-group>
+            <ion-list-header>
+              Privacy
+            </ion-list-header>
+          
+            <ion-item>
+              <ion-label>Public</ion-label>
+              <ion-radio checked="true" value="go"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Private ($4.99)</ion-label>
+              <ion-radio value="rust"></ion-radio>
+            </ion-item>
+          </ion-list>
+        <ion-list>
+            <ion-label>Subscription Price : ${{price}}</ion-label>
+            <!-- <ion-item>
+                <ion-input type="number" placeholder=""></ion-input>
+            </ion-item> -->
+            <ion-item>
+                <ion-range min="0" max="20" step="0.5" [(ngModel)]="price">
+                    <ion-label range-left>$0</ion-label>
+                    <ion-label range-right>$20</ion-label>
+                </ion-range>
+              </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-label>Relevant Tags</ion-label>
+            <ion-item>
+              <ion-label>Music</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Sport</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Vehicles</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Food</ion-label>
+                <ion-checkbox></ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Other</ion-label>
+                <ion-checkbox></ion-checkbox>
+            </ion-item>
+          
+          </ion-list>
+    <button ion-button color="secondary" full (click)="dismiss()" id="submitBut">Submit Group</button>  
+  </ion-content>

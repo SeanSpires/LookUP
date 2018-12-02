@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+ >
+</ion-searchbar>
+  </ion-navbar>
+  
+
+</ion-header>
+
+
+
+<ion-content padding class="contentBack">
+    <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
+    
+   
+  <ion-card>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../assets/imgs/sean.jpg">
+        </ion-avatar>
+        <h2>Shaun Spyers</h2>
+        <p>"Beans!"</p>
+        <!-- <p>November 5, 1955</p> -->
+      </ion-item>
+    
+      <!-- <img src="../assets/imgs/pianoHands2.png"> -->
+      <ion-slides pager>
+          <ion-slide>
+              <img src="../assets/imgs/pianoHands2.png">
+          </ion-slide>
+          <ion-slide>
+              <img src="../assets/imgs/sonata.png">
+          </ion-slide>
+          <ion-slide>
+              <img src="../assets/imgs/trills.jpg">
+          </ion-slide>
+        </ion-slides>
+
+      <ion-card-content>
+        <p>Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='star'></ion-icon>
+            12 Favs
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='text'></ion-icon>
+            4 Comments
+          </button>
+        </ion-col>
+        <ion-col align-self-center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    
+    </ion-card>
+
+    <ion-card>
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../assets/imgs/rohaan.jpg">
+          </ion-avatar>
+          <h2>Rohaan Mistry</h2>
+          <p>"With Great Power Comes Great Responsibility"</p>
+          <!-- <p>November 5, 1955</p> -->
+        </ion-item>
+      
+       
+        <ion-slides pager>
+            <ion-slide>
+                <img src="../assets/imgs/pianoHands2.png">
+            </ion-slide>
+            <ion-slide>
+                <img src="../assets/imgs/sonata.png">
+            </ion-slide>
+            <ion-slide>
+                <img src="../assets/imgs/trills.jpg">
+            </ion-slide>
+          </ion-slides>
+
+        <ion-card-content>
+          <p>Is my car supposed to be sounding like this?</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='star'></ion-icon>
+              2 Favs
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='text'></ion-icon>
+              2 Comments
+            </button>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              14h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
+
+      <ion-card>
+
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="../assets/imgs/bharat.jpg">
+            </ion-avatar>
+            <h2>Bob Rhat</h2>
+            <p>"N4PAL1"</p>
+            <!-- <p>November 5, 1955</p> -->
+          </ion-item>
+        
+          <!-- <img src="../assets/imgs/pianoHands2.png"> -->
+          <ion-slides pager>
+              <ion-slide>
+                  <img src="../assets/imgs/pianoHands2.png" class="slide-image">
+              </ion-slide>
+              <ion-slide>
+                  <img src="../assets/imgs/sonata.png">
+              </ion-slide>
+              <ion-slide>
+                  <img src="../assets/imgs/trills.jpg">
+              </ion-slide>
+            </ion-slides>
+  
+          <ion-card-content>
+            <p>Could look at my tennis serve form and tell me if my elbow is in the right position?</p>
+          </ion-card-content>
+        
+          <ion-row>
+            <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                <ion-icon name='star'></ion-icon>
+                24 Favs
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                <ion-icon name='text'></ion-icon>
+                8 Comments
+              </button>
+            </ion-col>
+            <ion-col align-self-center text-center>
+              <ion-note>
+                16h ago
+              </ion-note>
+            </ion-col>
+          </ion-row>
+        
+        </ion-card>    
+</ion-content>
