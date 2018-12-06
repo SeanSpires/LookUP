@@ -22,7 +22,7 @@ export class GroupModalPage {
 
   }
 
-  dismiss() {
+  dismissGroupModal() {
     this.loadingCtrl.create({
       content: 'Please wait...',
       duration: 2000,

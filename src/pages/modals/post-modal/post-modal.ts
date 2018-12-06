@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController, LoadingController } from 'ionic-angular';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { PostService } from '../../../app/services/post.service';
 
 /**
  * Generated class for the PostModalPage page.
@@ -15,14 +16,28 @@ import { ImagePicker } from '@ionic-native/image-picker';
   templateUrl: 'post-modal.html',
 })
 export class PostModalPage {
-  myParam: string;
-  price: number = 0;
   constructor(
     public viewCtrl: ViewController, public loadingCtrl: LoadingController, private imagePicker: ImagePicker,
-    params: NavParams
+    public postService: PostService 
   ) {
-    // this.myParam = params.get('myParam');
+
   }
+  
+  appendNewPost() {
+    this.postService.posts.push({desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+    id: 1,
+    date: "16hr",
+    avatar: "../assets/imgs/sean.jpg",
+    userQuote: "Beans!",
+    mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
+    user: "Sean Spires",
+    comments: 4,
+    favourites: 12});
+
+    this.viewCtrl.dismiss();
+    
+  }
+
 
   openImageGallery() {
 

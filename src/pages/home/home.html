@@ -16,19 +16,19 @@
     <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
     
    
-  <ion-card>
+  <!-- <ion-card>
 
       <ion-item>
         <ion-avatar item-start>
           <img src="../assets/imgs/sean.jpg">
         </ion-avatar>
         <h2>Shaun Spyers</h2>
-        <p>"Beans!"</p>
+        <p>"Beans!"</p> -->
         <!-- <p>November 5, 1955</p> -->
-      </ion-item>
+      <!-- </ion-item> -->
     
       <!-- <img src="../assets/imgs/pianoHands2.png"> -->
-      <ion-slides pager>
+      <!-- <ion-slides pager>
           <ion-slide>
               <img src="../assets/imgs/pianoHands2.png">
           </ion-slide>
@@ -74,7 +74,7 @@
           </ion-avatar>
           <h2>Rohaan Mistry</h2>
           <p>"With Great Power Comes Great Responsibility"</p>
-          <!-- <p>November 5, 1955</p> -->
+          <p>November 5, 1955</p>
         </ion-item>
       
        
@@ -123,12 +123,12 @@
               <img src="../assets/imgs/bharat.jpg">
             </ion-avatar>
             <h2>Bob Rhat</h2>
-            <p>"N4PAL1"</p>
+            <p>"N4PAL1"</p> -->
             <!-- <p>November 5, 1955</p> -->
-          </ion-item>
+          <!-- </ion-item> -->
         
           <!-- <img src="../assets/imgs/pianoHands2.png"> -->
-          <ion-slides pager>
+          <!-- <ion-slides pager>
               <ion-slide>
                   <img src="../assets/imgs/pianoHands2.png" class="slide-image">
               </ion-slide>
@@ -138,9 +138,9 @@
               <ion-slide>
                   <img src="../assets/imgs/trills.jpg">
               </ion-slide>
-            </ion-slides>
+            </ion-slides> -->
   
-          <ion-card-content>
+          <!-- <ion-card-content>
             <p>Could look at my tennis serve form and tell me if my elbow is in the right position?</p>
           </ion-card-content>
         
@@ -164,9 +164,9 @@
             </ion-col>
           </ion-row>
         
-        </ion-card>    
+        </ion-card>     -->
 
-        <ion-card *ngFor="let post of posts">
+        <ion-card *ngFor="let post of postService.posts">
           <ion-item>
             <ion-avatar item-start>
               <img src={{post.avatar}}>
