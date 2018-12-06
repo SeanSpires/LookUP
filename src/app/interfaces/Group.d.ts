@@ -6,6 +6,8 @@ export interface GroupInterface {
     groupDescription: string;
     groupPhoto: string;
     groupPrivacy: groupPrivacyOption;
-    groupSubscriptionPrice: string;
+    groupSubscriptionPrice: string | number;
     selectedGroupTags: string[];
+    
+
 }
