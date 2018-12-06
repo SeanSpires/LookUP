@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { PostModalPage } from '../modals/post-modal/post-modal';
-import { PostInterface } from './Post';
+import { PostInterface } from '../../app/interfaces/Post';
 
 @Component({
   selector: 'page-home',
@@ -56,7 +56,6 @@ export class HomePage implements OnInit {
   }
 
   presentModal() {
-    console.log('sean is gay');
     let myModal = this.modalController.create(PostModalPage);
     myModal.present();
   }

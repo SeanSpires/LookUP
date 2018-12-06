@@ -27,7 +27,7 @@ export class PostModalPage {
   openImageGallery() {
 
     this.imagePicker.getPictures({
-      maximumImagesCount: 3,
+      maximumImagesCount: 5,
       
     }).then(function printImages(results) {
       for (var i = 0; i < results.length; i++) {

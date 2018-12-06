@@ -20,6 +20,7 @@ import { GroupModalPage } from '../pages/modals/groupModal/groupModal';
 import { PostModalPage } from '../pages/modals/post-modal/post-modal';
 
 import { ImagePicker } from '@ionic-native/image-picker';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
     StatusBar,
     SplashScreen,
     ImagePicker,
+    PostService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

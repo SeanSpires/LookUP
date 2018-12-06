@@ -1,4 +1,4 @@
-import { UserInterface } from "./User";
+import { UserInterface } from "../../pages/home/User";
 
 
 export interface PostInterface {
