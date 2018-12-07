@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams, ViewController, LoadingController } from 'ionic-angular';
+import { IonicPage, ViewController, LoadingController } from 'ionic-angular';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { PostService } from '../../../app/services/post.service';
 import { PostInterface } from '../../../app/interfaces/Post';
-import { selectedRadioButton } from '../../../utils/selected-radio-button';
 
 /**
  * Generated class for the PostModalPage page.
@@ -21,7 +20,9 @@ import { selectedRadioButton } from '../../../utils/selected-radio-button';
 
 export class PostModalPage {
   constructor(
-    public viewCtrl: ViewController, public loadingCtrl: LoadingController, private imagePicker: ImagePicker,
+    public viewCtrl: ViewController, 
+    public loadingCtrl: LoadingController, 
+    private imagePicker: ImagePicker,
     public postService: PostService 
   ) {    
   }
@@ -54,6 +55,11 @@ export class PostModalPage {
   }
 
   submitGroup() {
+    this.loadingCtrl.create({
+      content: 'Please wait...',
+      duration: 2000,
+      dismissOnPageChange: true
+    }).present();
     this.postService.posts.unshift(this.newPostDetails);
     this.viewCtrl.dismiss();
   }
