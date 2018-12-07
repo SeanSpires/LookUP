@@ -1,3 +1,25 @@
 page-post-modal {
+    #submitBut {
+        border-radius: 2px;
+    }
 
+    #privacyLabel {
+        margin-top: 40px;
+    }
+
+    #groupsToPostToLabel {
+        margin-top: 40px;
+    }
+
+    .list-header-md {
+        border-top: none;
+        border-bottom: 2px rgb(235, 235, 237) solid;
+        color: black;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .list-md {
+        border-bottom: 2px rgb(235, 235, 237) solid 
+    }
 }

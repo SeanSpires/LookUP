@@ -1,9 +1,4 @@
-<!--
-  Generated template for the ModalPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
     <ion-navbar color="primary">
       <ion-buttons start>
@@ -20,10 +15,10 @@
               Group Details
             </ion-list-header>
           <ion-item>
-              <ion-input placeholder="Group Name"></ion-input>
+              <ion-input placeholder="Group Name" [(ngModel)]="newGroupDetails.groupName" ></ion-input>
             </ion-item>
           <ion-item>
-            <ion-input placeholder="Group Description"></ion-input>
+            <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription"></ion-input>
           </ion-item>       
         </ion-list>
         <ion-list radio-group >
@@ -43,9 +38,6 @@
           </ion-list>
         <ion-list>
             <ion-label id="subscriptionLabel">Subscription Price : ${{newGroupDetails.groupSubscriptionPrice}}</ion-label>
-            <!-- <ion-item>
-                <ion-input type="number" placeholder=""></ion-input>
-            </ion-item> -->
             <ion-item>
                 <ion-range min="0" max="20" step="0.5" [(ngModel)]="newGroupDetails.groupSubscriptionPrice">
                     <ion-label range-left>$0</ion-label>
@@ -81,5 +73,5 @@
             </ion-item>
           
           </ion-list>
-    <button ion-button color="secondary" full (click)="dismissGroupModal()" id="submitBut">Submit Group</button>  
+    <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Group</button>  
   </ion-content>

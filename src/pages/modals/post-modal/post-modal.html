@@ -7,13 +7,50 @@
 <ion-header>
 
   <ion-navbar color="primary">
+      <ion-buttons start>
+          <button ion-button (click)="exitPostModal()">Close</button>
+      </ion-buttons>
     <ion-title>Ask Something</ion-title>
   </ion-navbar>
-
 </ion-header>
  
 
 <ion-content padding>
-    <button ion-button (click)="appendNewPost()">hello</button>
+    <button ion-button (click)="openImageGallery()" full>Select Videos/Images to Post</button>
+    <ion-list>
+      <ion-list-header>
+          Post Details
+        </ion-list-header>
+      <ion-item>
+          <ion-input placeholder="Description" [(ngModel)]="newPostDetails.desc" ></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <ion-label id="groupsToPostToLabel">Groups to Post to</ion-label>
+        <ion-item>
+          <ion-label>5th Grade Piano</ion-label>
+          <ion-radio value="5th-grade-piano" (ionSelect)="radioChecked('5th-grade-piano')"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Tims Tennis</ion-label>
+          <ion-radio value="tims-tennis" (ionSelect)="radioChecked('tims-tennis')"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Cars</ion-label>
+          <ion-radio value="cars" (ionSelect)="radioChecked('cars')"></ion-radio>
+        </ion-item>
 
+        <ion-item>
+            <ion-label>Sallys Cooking</ion-label>
+            <ion-radio value="sallys-cooking" (ionSelect)="radioChecked('sallys-cooking')"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Connors Coding</ion-label>
+            <ion-radio value="connors-coding" (ionSelect)="radioChecked('connors-coding')"></ion-radio>
+        </ion-item>
+      </ion-list>
+    <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Group</button>  
 </ion-content>

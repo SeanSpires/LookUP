@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController, LoadingController } from 'ionic-angular';
 import { groupPrivacyOption } from '../../../app/enums/groupPrivacyOption';
+import { GroupInterface } from '../../../app/interfaces/Group';
+import { GroupService } from '../../../app/services/group.service';
 
 /**
  * Generated class for the ModalPage page.
@@ -19,29 +21,33 @@ export class GroupModalPage {
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController,
+    public groupService: GroupService,
     params: NavParams
   ) {}
 
-  newGroupDetails = {
+  newGroupDetails: GroupInterface = {
     groupName: '',
     groupDescription: '',
-    groupPhoto: '',
+    groupPhoto: "../../assets/imgs/defaultGroupIcon.png",
     groupPrivacy: groupPrivacyOption.Public,
     groupSubscriptionPrice: 0,
     selectedGroupTags: ["Other"]
   }
 
-  dismissGroupModal() {
+  submitGroup() {
     this.loadingCtrl.create({
       content: 'Please wait...',
       duration: 2000,
       dismissOnPageChange: true
     }).present();
     this.viewCtrl.dismiss();
+    this.groupService.subscribedGroups.push(this.newGroupDetails);
   }
 
   exitGroupModal() {
     this.viewCtrl.dismiss();
   }
+
+  
   
 }

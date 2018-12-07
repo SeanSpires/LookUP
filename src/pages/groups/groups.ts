@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, AlertController, ModalController } from 'ionic-angular';
 import { PopoverComponent } from '../../components/popover/popover';
 import { GroupModalPage } from '../modals/groupModal/groupModal';
+import { GroupService } from '../../app/services/group.service';
 
 /**
  * Generated class for the GroupsPage page.
@@ -19,8 +20,12 @@ export class GroupsPage {
 
   showNewGroup: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, 
-              public alertCtrl: AlertController, public modalController: ModalController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public popoverCtrl: PopoverController, 
+              public alertCtrl: AlertController, 
+              public modalController: ModalController, 
+              public groupService: GroupService) {
   }
 
   ionViewDidLoad() {
