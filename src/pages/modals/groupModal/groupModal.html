@@ -7,7 +7,7 @@
 <ion-header>
     <ion-navbar color="primary">
       <ion-buttons start>
-        <button ion-button (click)="dismiss()">Close</button>
+        <button ion-button (click)=" exitGroupModal()">Close</button>
       </ion-buttons>
       <ion-title>Create a LookUP Group</ion-title>
     </ion-navbar>
@@ -24,13 +24,10 @@
             </ion-item>
           <ion-item>
             <ion-input placeholder="Group Description"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-input placeholder="Group Photo"></ion-input>
-            </ion-item>          
+          </ion-item>       
         </ion-list>
-        <ion-list radio-group>
-            <ion-list-header>
+        <ion-list radio-group >
+            <ion-list-header id="privacyLabel">
               Privacy
             </ion-list-header>
           
@@ -45,19 +42,19 @@
             </ion-item>
           </ion-list>
         <ion-list>
-            <ion-label>Subscription Price : ${{price}}</ion-label>
+            <ion-label id="subscriptionLabel">Subscription Price : ${{newGroupDetails.groupSubscriptionPrice}}</ion-label>
             <!-- <ion-item>
                 <ion-input type="number" placeholder=""></ion-input>
             </ion-item> -->
             <ion-item>
-                <ion-range min="0" max="20" step="0.5" [(ngModel)]="price">
+                <ion-range min="0" max="20" step="0.5" [(ngModel)]="newGroupDetails.groupSubscriptionPrice">
                     <ion-label range-left>$0</ion-label>
                     <ion-label range-right>$20</ion-label>
                 </ion-range>
               </ion-item>
         </ion-list>
         <ion-list>
-            <ion-label>Relevant Tags</ion-label>
+            <ion-label id="subscriptionLabel">Relevant Tags</ion-label>
             <ion-item>
               <ion-label>Music</ion-label>
               <ion-checkbox></ion-checkbox>

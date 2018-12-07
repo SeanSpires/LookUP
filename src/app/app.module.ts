@@ -21,6 +21,7 @@ import { PostModalPage } from '../pages/modals/post-modal/post-modal';
 
 import { ImagePicker } from '@ionic-native/image-picker';
 import { PostService } from './services/post.service';
+import { GroupService } from './services/group.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PostService } from './services/post.service';
     SplashScreen,
     ImagePicker,
     PostService,
+    GroupService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

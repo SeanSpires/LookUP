@@ -4,4 +4,15 @@ page-groups {
         font-size: 25px;
         font-weight: bold;
     }
+
+    #suggestedGroupsLabel {
+        margin-top: 40px;
+    }
+
+    .list-header-md{
+        color: black;
+        border-bottom: 1px solid #dedede;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
 }
