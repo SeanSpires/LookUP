@@ -1,19 +1,15 @@
-page-post-modal {
-    #submitBut {
-        border-radius: 2px;
+page-selected-post-modal {
+    
+    #commentLabel{
+        border-bottom: 2px solid rgb(147, 126, 223);
     }
-
-    #privacyLabel {
-        margin-top: 40px;
-    }
-
-    #groupsToPostToLabel {
-        margin-top: 40px;
+    .content-md hr{
+        background-color: rgb(147, 126, 223);
     }
 
     .list-header-md {
         border-top: none;
-        border-bottom: 2px solid rgb(147, 126, 223);
+        border-bottom: 2px rgb(235, 235, 237) solid;
         color: black;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -22,4 +18,6 @@ page-post-modal {
     .list-md {
         border-bottom: 2px rgb(235, 235, 237) solid 
     }
+
+    
 }

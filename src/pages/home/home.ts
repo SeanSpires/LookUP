@@ -2,25 +2,37 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { PostModalPage } from '../modals/post-modal/post-modal';
 import { PostService } from '../../app/services/post.service';
+import { PostInterface } from '../../app/interfaces/Post';
+import { SelectedPostModalPage } from '../modals/selected-post-modal/selected-post-modal';
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit {
+export class HomePage  {
 
-  constructor(public navCtrl: NavController, public modalController: ModalController, public postService: PostService) {
-
+  constructor(public navCtrl: NavController,
+              public modalController: ModalController, 
+              public postService: PostService) {
+              
   }
   
-  ngOnInit() {
-          
-  }
+ 
 
   presentModal() {
-    let myModal = this.modalController.create(PostModalPage);
-    myModal.present();
+    let myCreatePostModal = this.modalController.create(PostModalPage);
+    myCreatePostModal.present();
+  }
+
+  public setCurrentSelectedPost (selectedPost: PostInterface) {
+    this.postService.currentSelectedPost = selectedPost;
+    this.openSelectedPostModal();
+  }
+
+  public openSelectedPostModal() {
+    let mySelectedPostModal = this.modalController.create(SelectedPostModalPage);
+    mySelectedPostModal.present();
   }
 }
 

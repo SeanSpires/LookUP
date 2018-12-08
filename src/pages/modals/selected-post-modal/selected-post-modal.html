@@ -1,0 +1,65 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{postService.currentSelectedPost.postOrigin}}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="exitSelectedPostModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src={{postService.currentSelectedPost.avatar}}>
+          </ion-avatar>
+          <h2>{{postService.currentSelectedPost.user}}</h2>
+          <p>{{postService.currentSelectedPost.postOrigin}}</p>
+        </ion-item>
+  
+        <ion-slides pager>
+            <ion-slide *ngFor="let file of postService.currentSelectedPost.mediaFiles">
+                <img src={{file}} class="slide-image">
+            </ion-slide>
+            
+          </ion-slides>
+
+        <ion-card-content>
+          <p>{{postService.currentSelectedPost.desc}}</p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-list>
+          <ion-list-header id="commentLabel">
+              Comments
+            </ion-list-header>
+          <ion-item>
+          <ion-input placeholder="Add Comment"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    <ion-card>
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="img/marty-avatar.png">
+          </ion-avatar>
+          <h2>Marty McFly</h2>
+        </ion-item>
+      
+        <img src="img/advance-card-bttf.png">
+      
+        <ion-card-content>
+          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+        </ion-card-content>
+      </ion-card>
+
+
+      
+        
+
+</ion-content>

@@ -22,6 +22,7 @@ import { PostModalPage } from '../pages/modals/post-modal/post-modal';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { PostService } from './services/post.service';
 import { GroupService } from './services/group.service';
+import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selected-post-modal';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GroupService } from './services/group.service';
     PopoverComponent,
     GroupModalPage,
     PostModalPage,
-    TabsPage
+    TabsPage,
+    SelectedPostModalPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { GroupService } from './services/group.service';
     PopoverComponent,
     GroupModalPage,
     PostModalPage,
-    TabsPage
+    TabsPage,
+    SelectedPostModalPage
   ],
   providers: [
     StatusBar,
