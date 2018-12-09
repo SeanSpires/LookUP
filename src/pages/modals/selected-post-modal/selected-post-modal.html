@@ -42,24 +42,20 @@
       </ion-list>
     </ion-card>
 
-    <ion-card>
-
+    <ion-card *ngFor="let comment of postService.currentSelectedPost.comments">
         <ion-item>
           <ion-avatar item-start>
-            <img src="img/marty-avatar.png">
+            <img src={{comment.avatar}}>
           </ion-avatar>
-          <h2>Marty McFly</h2>
+          <h2>{{comment.user}}</h2>
         </ion-item>
-      
-        <img src="img/advance-card-bttf.png">
-      
+        <ion-slides pager>
+            <ion-slide *ngFor="let file of comment.mediaFiles">
+                <img src={{file}} class="slide-image">
+            </ion-slide>
+          </ion-slides>
         <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+          <p>{{comment.description}}</p>
         </ion-card-content>
       </ion-card>
-
-
-      
-        
-
 </ion-content>

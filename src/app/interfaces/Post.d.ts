@@ -1,4 +1,5 @@
 import { UserInterface } from "../../pages/home/User";
+import { CommentInterface } from "./Comment";
 
 
 export interface PostInterface {
@@ -9,7 +10,7 @@ export interface PostInterface {
     postOrigin: String,
     mediaFiles: string[]; // URI or Base64 Encoded
     user: string;
-    comments: number;
+    comments: CommentInterface[];
     favourites: number;
 
 }

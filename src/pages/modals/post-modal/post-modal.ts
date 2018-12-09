@@ -35,7 +35,7 @@ export class PostModalPage {
     postOrigin: '',
     mediaFiles: ["../../assets/imgs/pianoHands2.png", "../../assets/imgs/sonata.png", "../../assets/imgs/trills.jpg"],
     user: "Sean Spires",
-    comments: 0,
+    comments: [],
     favourites: 0
   }
 
