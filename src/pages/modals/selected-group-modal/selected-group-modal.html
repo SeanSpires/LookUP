@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar color="primary">
+  <ion-title>{{groupService.currentSelectedGroup.groupName}}</ion-title>
+ 
+    <ion-buttons start>
+        <button ion-button (click)="exitSelectedGroupModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+    
+  </ion-header>
+  
+  <ion-content padding class="contentBack">
+      <ion-searchbar
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+     >
+    </ion-searchbar>
+      <button ion-button full id="uploadBtn">ASK SOMETHING</button>
+      
+          <ion-card (click)="setCurrentSelectedPost(post)" *ngFor="let post of groupService.currentSelectedGroup.posts">
+            <ion-item>
+              <ion-avatar item-start>
+                <img src={{post.avatar}}>
+              </ion-avatar>
+              <h2>{{post.user}}</h2>
+              <p>{{post.postOrigin}}</p>
+            </ion-item>
+      
+            <ion-slides pager>
+                <ion-slide *ngFor="let file of post.mediaFiles">
+                    <img src={{file}} class="slide-image">
+                </ion-slide>
+                
+              </ion-slides>
+    
+            <ion-card-content>
+              <p>{{post.desc}}</p>
+            </ion-card-content>
+          
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='star'></ion-icon>
+                  {{post.favourites}} Favs
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='text'></ion-icon>
+                  {{post.comments.length}} Comments
+                </button>
+              </ion-col>
+              <ion-col align-self-center text-center>
+                <ion-note>
+                  {{post.date}}
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          
+          </ion-card>    
+  
+          
+  </ion-content>
+  

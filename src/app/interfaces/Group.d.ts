@@ -1,4 +1,5 @@
 import { groupPrivacyOption } from "../enums/groupPrivacyOption";
+import { PostInterface } from "./Post";
 
 
 export interface GroupInterface {
@@ -8,6 +9,7 @@ export interface GroupInterface {
     groupPrivacy: groupPrivacyOption;
     groupSubscriptionPrice: string | number;
     selectedGroupTags: string[];
+    posts: PostInterface[];
     
 
 }

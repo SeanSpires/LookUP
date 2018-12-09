@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, PopoverController, AlertController
 import { PopoverComponent } from '../../components/popover/popover';
 import { GroupModalPage } from '../modals/groupModal/groupModal';
 import { GroupService } from '../../app/services/group.service';
+import { SelectedGroupModalPage } from '../modals/selected-group-modal/selected-group-modal';
+import { GroupInterface } from '../../app/interfaces/Group';
 
 /**
  * Generated class for the GroupsPage page.
@@ -39,10 +41,22 @@ export class GroupsPage {
     });
   }
   
-  presentModal() {
+  presentNewGroupModal() {
     let myModal = this.modalController.create(GroupModalPage);
     myModal.present();
     this.showNewGroup = true;    
+  }
+  
+
+  public setCurrentSelectedGroup(selectedGroup: GroupInterface) {
+    this.groupService.currentSelectedGroup = selectedGroup;
+    console.log(selectedGroup);
+    this.openSelectedGroupModal();
+  }
+
+  public openSelectedGroupModal() {
+    let mySelectedPostModal = this.modalController.create(SelectedGroupModalPage);
+    mySelectedPostModal.present();
   }
 
 }

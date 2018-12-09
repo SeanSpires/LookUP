@@ -1,6 +1,4 @@
-import { UserInterface } from "../../pages/home/User";
 import { CommentInterface } from "./Comment";
-
 
 export interface PostInterface {
     id: string | number;

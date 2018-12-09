@@ -17,7 +17,7 @@
     </span> -->
     <ion-buttons end>
         <!-- <button ion-button icon-only (click)="presentPopover($event)"> -->
-            <button ion-button icon-only (click)="presentModal()">
+            <button ion-button icon-only (click)="presentNewGroupModal()">
             <ion-icon name="add"></ion-icon>
         </button>
     </ion-buttons>
@@ -38,7 +38,7 @@
         Your Groups
       </ion-list-header>
   
-      <ion-item-sliding *ngFor= "let group of groupService.subscribedGroups"> 
+      <ion-item-sliding *ngFor= "let group of groupService.subscribedGroups" (click)="setCurrentSelectedGroup(group)"> 
         <ion-item>
           <ion-avatar item-start>
             <img src={{group.groupPhoto}}>
@@ -67,7 +67,7 @@
         LookUP Suggested Groups
       </ion-list-header>
   
-      <ion-item-sliding *ngFor= "let group of groupService.recommendedGroups">
+      <ion-item-sliding *ngFor= "let group of groupService.recommendedGroups" (click)="setCurrentSelectedGroup(group)">
         <ion-item>
           <ion-avatar item-start>
             <img src={{group.groupPhoto}}>

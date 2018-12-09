@@ -31,7 +31,8 @@ export class GroupModalPage {
     groupPhoto: "../../assets/imgs/defaultGroupIcon.png",
     groupPrivacy: groupPrivacyOption.Public,
     groupSubscriptionPrice: 0,
-    selectedGroupTags: ["Other"]
+    selectedGroupTags: ["Other"],
+    posts: []
   }
 
   submitGroup() {

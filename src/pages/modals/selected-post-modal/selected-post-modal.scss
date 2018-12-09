@@ -2,6 +2,9 @@ page-selected-post-modal {
     
     #commentLabel{
         border-bottom: 2px solid rgb(147, 126, 223);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 30px;
     }
     .content-md hr{
         background-color: rgb(147, 126, 223);
@@ -19,5 +22,10 @@ page-selected-post-modal {
         border-bottom: 2px rgb(235, 235, 237) solid 
     }
 
+    .contentBack {
+        background-color: rgb(239, 239, 244)
+    }  
+
     
 }
+

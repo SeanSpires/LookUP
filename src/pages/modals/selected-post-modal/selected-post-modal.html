@@ -9,7 +9,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="contentBack">
     <ion-card>
         <ion-item>
           <ion-avatar item-start>
@@ -28,34 +28,30 @@
 
         <ion-card-content>
           <p>{{postService.currentSelectedPost.desc}}</p>
+          <ion-list>
+              <p id="commentLabel">
+                  Comments
+                </p>
+              <!-- <ion-item> -->
+              <ion-input placeholder="Add Comment"></ion-input>
+            <!-- </ion-item> -->
+          </ion-list>
         </ion-card-content>
+        <ion-card *ngFor="let comment of postService.currentSelectedPost.comments">
+            <ion-item>
+              <ion-avatar item-start>
+                <img src={{comment.avatar}}>
+              </ion-avatar>
+              <h2>{{comment.user}}</h2>
+            </ion-item>
+            <ion-slides pager>
+                <ion-slide *ngFor="let file of comment.mediaFiles">
+                    <img src={{file}} class="slide-image">
+                </ion-slide>
+              </ion-slides>
+            <ion-card-content>
+              <p>{{comment.description}}</p>
+            </ion-card-content>
+          </ion-card>
     </ion-card>
-
-    <ion-card>
-      <ion-list>
-          <ion-list-header id="commentLabel">
-              Comments
-            </ion-list-header>
-          <ion-item>
-          <ion-input placeholder="Add Comment"></ion-input>
-        </ion-item>
-      </ion-list>
-    </ion-card>
-
-    <ion-card *ngFor="let comment of postService.currentSelectedPost.comments">
-        <ion-item>
-          <ion-avatar item-start>
-            <img src={{comment.avatar}}>
-          </ion-avatar>
-          <h2>{{comment.user}}</h2>
-        </ion-item>
-        <ion-slides pager>
-            <ion-slide *ngFor="let file of comment.mediaFiles">
-                <img src={{file}} class="slide-image">
-            </ion-slide>
-          </ion-slides>
-        <ion-card-content>
-          <p>{{comment.description}}</p>
-        </ion-card-content>
-      </ion-card>
 </ion-content>

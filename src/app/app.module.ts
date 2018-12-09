@@ -23,6 +23,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { PostService } from './services/post.service';
 import { GroupService } from './services/group.service';
 import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selected-post-modal';
+import { SelectedGroupModalPage } from '../pages/modals/selected-group-modal/selected-group-modal';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selec
     GroupModalPage,
     PostModalPage,
     TabsPage,
-    SelectedPostModalPage
+    SelectedPostModalPage,
+    SelectedGroupModalPage,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selec
     GroupModalPage,
     PostModalPage,
     TabsPage,
-    SelectedPostModalPage
+    SelectedPostModalPage,
+    SelectedGroupModalPage,
   ],
   providers: [
     StatusBar,

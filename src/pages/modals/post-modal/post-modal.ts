@@ -4,13 +4,6 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { PostService } from '../../../app/services/post.service';
 import { PostInterface } from '../../../app/interfaces/Post';
 
-/**
- * Generated class for the PostModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-post-modal',
