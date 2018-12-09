@@ -10,13 +10,7 @@
     <span>
         <ion-title float-left>LookUP Groups</ion-title>
     </span>
-    <!-- <span float-right>
-      <button ion-button icon-only (click)="presentPopover($event)">
-          <ion-icon name="add" id="addIcon" color="light" item-end></ion-icon>
-      </button> 
-    </span> -->
     <ion-buttons end>
-        <!-- <button ion-button icon-only (click)="presentPopover($event)"> -->
             <button ion-button icon-only (click)="presentNewGroupModal()">
             <ion-icon name="add"></ion-icon>
         </button>
@@ -46,10 +40,6 @@
           <h2>{{group.groupName}}</h2>
         </ion-item>
         <ion-item-options>
-          <button ion-button color="light" icon-start>
-            <ion-icon name="more"></ion-icon>
-            More
-          </button>
           <button ion-button color="primary" icon-start>
             <ion-icon name="text"></ion-icon>
             Text
@@ -67,12 +57,13 @@
         LookUP Suggested Groups
       </ion-list-header>
   
-      <ion-item-sliding *ngFor= "let group of groupService.recommendedGroups" (click)="setCurrentSelectedGroup(group)">
+      <ion-item-sliding *ngFor= "let group of groupService.recommendedGroups">
         <ion-item>
-          <ion-avatar item-start>
+          <ion-avatar item-start (click)="setCurrentSelectedGroup(group)">
             <img src={{group.groupPhoto}}>
           </ion-avatar>
-          <h2>{{group.groupName}}</h2>
+          <h2 (click)="setCurrentSelectedGroup(group)">{{group.groupName}}</h2>
+          <ion-icon name="add" item-end (click)="subscribeToSuggestedGroup(group)"></ion-icon>
         </ion-item>
         <ion-item-options>
           <button ion-button color="light" icon-start>
@@ -83,9 +74,9 @@
             <ion-icon name="text"></ion-icon>
             Text
           </button>
-          <button ion-button color="danger" icon-start>
-            <ion-icon name="trash"></ion-icon>
-            Trash
+          <button ion-button color="secondary" icon-start>
+            <ion-icon name="add"></ion-icon>
+            Join
           </button>
         </ion-item-options>
       </ion-item-sliding>

@@ -59,6 +59,10 @@ export class GroupsPage {
     mySelectedPostModal.present();
   }
 
+  public subscribeToSuggestedGroup(groupToSubscribe: GroupInterface){
+    this.groupService.subscribedGroups.push(groupToSubscribe);
+  }
+
 }
 
 
