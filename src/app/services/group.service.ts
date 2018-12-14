@@ -18,13 +18,13 @@ export class GroupService {
         selectedGroupTags: ["Music","Other"],
         posts: [
             {
-              desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+              desc: "I need help understanding line two, could anyone explain?",
               id: 1,
               date: "16hr",
-              avatar: "../assets/imgs/sean.jpg",
+              avatar: "../assets/imgs/anime.jpg",
               postOrigin: "Grade 5 Piano",
-              mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
-              user: "Sean Spires",
+              mediaFiles: ["../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
+              user: "Rachel Glass",
               comments: [{
                 id: 1,
                 description: "You're confusing the 3rd and 4th finger placements",
@@ -52,13 +52,13 @@ export class GroupService {
               favourites: 12
             },
             {
-              desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+              desc: "Hey Everyone I circled an issue I came across today, could someone demonstrate with a vid please?",
               id: 1,
               date: "16hr",
-              avatar: "../assets/imgs/sean.jpg",
+              avatar: "../assets/imgs/bharat.jpg",
               postOrigin: "Grade 5 Piano",
-              mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
-              user: "Sean Spires",
+              mediaFiles: ["../assets/imgs/trills.jpg"],
+              user: "Bharat Rasali",
               comments: [{
                 id: 1,
                 description: "You're confusing the 3rd and 4th finger placements",

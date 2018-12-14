@@ -22,7 +22,7 @@ export class PostModalPage {
 
   newPostDetails: PostInterface = {
     id: 1,
-    desc: '',
+    desc: 'Could someone help?',
     date: '1min',
     avatar: "../../assets/imgs/sean.jpg",
     postOrigin: '',
