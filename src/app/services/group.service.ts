@@ -123,9 +123,9 @@ export class GroupService {
     },
     
     {
-        groupName: "Grade 5 Piano",
+        groupName: "Tennis",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
-        groupPhoto: "../assets/imgs/cartoonPiano.jpg",
+        groupPhoto: "../assets/imgs/tennisC.jpg",
         groupPrivacy: groupPrivacyOption.Public,
         groupSubscriptionPrice: 0,
         selectedGroupTags: ["Music","Other"],
@@ -133,9 +133,9 @@ export class GroupService {
     },    
 
     {
-        groupName: "Grade 5 Piano",
+        groupName: "Cars",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
-        groupPhoto: "../assets/imgs/cartoonPiano.jpg",
+        groupPhoto: "../assets/imgs/wheelC.jpg",
         groupPrivacy: groupPrivacyOption.Public,
         groupSubscriptionPrice: 0,
         selectedGroupTags: ["Music","Other"],
@@ -145,9 +145,9 @@ export class GroupService {
 
    recommendedGroups: GroupInterface[] = [
     {
-        groupName: "Grade 5 Piano",
+        groupName: "Expert Guitar",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
-        groupPhoto: "../assets/imgs/defaultGroupIcon.png",
+        groupPhoto: "../assets/imgs/guitar.jpg",
         groupPrivacy: groupPrivacyOption.Public,
         groupSubscriptionPrice: 0,
         selectedGroupTags: ["Music","Other"],
@@ -155,9 +155,9 @@ export class GroupService {
     },
     
     {
-        groupName: "Grade 5 Piano",
+        groupName: "Culinary",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
-        groupPhoto: "../assets/imgs/cartoonPiano.jpg",
+        groupPhoto: "../assets/imgs/steak.jpg",
         groupPrivacy: groupPrivacyOption.Public,
         groupSubscriptionPrice: 0,
         selectedGroupTags: ["Music","Other"],
@@ -166,14 +166,32 @@ export class GroupService {
     },    
 
     {
-        groupName: "Grade 5 Piano",
+        groupName: "Computer Hardware",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
-        groupPhoto: "../assets/imgs/cartoonPiano.jpg",
+        groupPhoto: "../assets/imgs/PC.png",
         groupPrivacy: groupPrivacyOption.Public,
         groupSubscriptionPrice: 0,
         selectedGroupTags: ["Music","Other"],
         posts: []
-    }    
+    },
+    {
+      groupName: "Makeup",
+      groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+      groupPhoto: "../assets/imgs/makeup.png",
+      groupPrivacy: groupPrivacyOption.Public,
+      groupSubscriptionPrice: 0,
+      selectedGroupTags: ["Music","Other"],
+      posts: []
+    },
+    {
+      groupName: "Electronics",
+      groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+      groupPhoto: "../assets/imgs/plug.jpg",
+      groupPrivacy: groupPrivacyOption.Public,
+      groupSubscriptionPrice: 0,
+      selectedGroupTags: ["Music","Other"],
+      posts: []
+  }        
    ]
 
    

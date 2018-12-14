@@ -6,13 +6,6 @@ import { GroupService } from '../../app/services/group.service';
 import { SelectedGroupModalPage } from '../modals/selected-group-modal/selected-group-modal';
 import { GroupInterface } from '../../app/interfaces/Group';
 
-/**
- * Generated class for the GroupsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-groups',
@@ -61,6 +54,8 @@ export class GroupsPage {
 
   public subscribeToSuggestedGroup(groupToSubscribe: GroupInterface){
     this.groupService.subscribedGroups.push(groupToSubscribe);
+    let suggestedGroupIndex = this.groupService.recommendedGroups.indexOf(groupToSubscribe);
+    let splicedValue = this.groupService.recommendedGroups.splice(suggestedGroupIndex,1);
   }
 
 }
