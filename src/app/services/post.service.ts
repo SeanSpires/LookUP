@@ -14,7 +14,7 @@ export class PostService {
     {
       desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
       id: 1,
-      date: "16hr",
+      date: "50min",
       avatar: "../assets/imgs/sean.jpg",
       postOrigin: "Grade 5 Piano",
       mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
@@ -22,14 +22,14 @@ export class PostService {
       comments: [{
         id: 1,
         description: "You're confusing the 3rd and 4th finger placements",
-        avatar: "../assets/imgs/sean.jpg",
+        avatar: "../assets/imgs/andrew.jpg",
         mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
         user: "Andrew Hu"
       },
       {
         id: 2,
         description: "Here look at my fingers",
-        avatar: "../assets/imgs/sean.jpg",
+        avatar: "../assets/imgs/anime.jpg",
         mediaFiles: ["../assets/imgs/sonata.png"],
         user: "Hansa Asrani"                
       },
@@ -37,81 +37,72 @@ export class PostService {
         id: 3,
         description: "When you move your finger at 21 seconds, make sure your" +
                      "fingers are properly straight so you can press down with the correct force.",
-        avatar: "../assets/imgs/sean.jpg",
+        avatar: "../assets/imgs/cartoonSarah.png",
         mediaFiles: undefined,
-        user: "Hansa Asrani"                
+        user: "Sarah Jane"                
       }
     
     ],
       favourites: 12
     },
     {
-      desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+      desc: "Should my car be making this noise? it only does this in the morning",
       id: 1,
-      date: "16hr",
-      avatar: "../assets/imgs/sean.jpg",
-      postOrigin: "Grade 5 Piano",
+      date: "2hr",
+      avatar: "../assets/imgs/michelle.jpg",
+      postOrigin: "Cars",
       mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
-      user: "Sean Spires",
+      user: "Michelle Lam",
       comments: [{
         id: 1,
-        description: "You're confusing the 3rd and 4th finger placements",
-        avatar: "../assets/imgs/sean.jpg",
-        mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
+        description: "Yeah, your car model commonly will make that noise in the morning don't worry about it!",
+        avatar: "../assets/imgs/andrew.jpg",
+        mediaFiles: [],
         user: "Andrew Hu"
       },
       {
         id: 2,
-        description: "Here look at my fingers",
-        avatar: "../assets/imgs/sean.jpg",
+        description: "Don't worry mine makes the same noise too haha, listen to mine :)",
+        avatar: "../assets/imgs/anime.jpg",
         mediaFiles: ["../assets/imgs/sonata.png"],
         user: "Hansa Asrani"                
       },
-      {
-        id: 3,
-        description: "When you move your finger at 21 seconds, make sure your" +
-                     "fingers are properly straight so you can press down with the correct force.",
-        avatar: "../assets/imgs/sean.jpg",
-        mediaFiles: ["../assets/imgs/sonata.png"],
-        user: "Hansa Asrani"                
-      }
-    
     ],
-      favourites: 12
+      favourites: 22
     },
     {
-      desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
+      desc: "Hey guys could someone please confirm that my tennis serve is correct, TIA",
       id: 1,
-      date: "16hr",
-      avatar: "../assets/imgs/sean.jpg",
-      postOrigin: "Grade 5 Piano",
+      date: "5hr",
+      avatar: "../assets/imgs/samuel.jpg",
+      postOrigin: "Tennis",
       mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
-      user: "Sean Spires",
+      user: "Samuel Spid",
       comments: [{
         id: 1,
         description: "You're confusing the 3rd and 4th finger placements",
-        avatar: "../assets/imgs/sean.jpg",
+        avatar: "../assets/imgs/andrew.jpg",
         mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
         user: "Andrew Hu"
       },
       {
         id: 2,
         description: "Here look at my fingers",
-        avatar: "../assets/imgs/sean.jpg",
+        avatar: "../assets/imgs/samuel.jpg",
         mediaFiles: ["../assets/imgs/sonata.png"],
-        user: "Hansa Asrani"                
+        user: "Jordan Pan"                
       },
       {
         id: 3,
         description: "When you move your finger at 21 seconds, make sure your" +
                      "fingers are properly straight so you can press down with the correct force.",
-        avatar: "../assets/imgs/sean.jpg",
+        avatar: "../assets/imgs/cartoonSarah.png",
         mediaFiles: ["../assets/imgs/sonata.png"],
-        user: "Hansa Asrani"                
+        user: "Rachel Michelle"                
       }
     
     ],
-      favourites: 12
+      favourites: 7
     }
   ]
 
