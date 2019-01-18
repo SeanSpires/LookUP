@@ -18,7 +18,7 @@
               <ion-input placeholder="Group Name" [(ngModel)]="newGroupDetails.groupName"></ion-input>
             </ion-item>
           <ion-item>
-            <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription">ption"></ion-input>
+            <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription"></ion-input>
           </ion-item>       
         </ion-list>
         <ion-list radio-group >
@@ -67,5 +67,6 @@
                 <ion-checkbox></ion-checkbox>
             </ion-item>        
           </ion-list>
+    <button ion-button color="secondary" full (click)="getGroup()" id="submitBut">Get my group nigga</button>  
     <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Group</button>  
   </ion-content>

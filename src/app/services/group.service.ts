@@ -13,8 +13,8 @@ export class GroupService {
         groupName: "Grade 5 Piano",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
         groupPhoto: "../assets/imgs/cartoonPiano.jpg",
-        groupPrivacy: groupPrivacyOption.Public,
-        groupSubscriptionPrice: 0,
+        isPrivate: false,
+        groupPassword: '',
         selectedGroupTags: ["Music","Other"],
         posts: [
             {
@@ -126,8 +126,8 @@ export class GroupService {
         groupName: "Tennis",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
         groupPhoto: "../assets/imgs/tennisC.jpg",
-        groupPrivacy: groupPrivacyOption.Public,
-        groupSubscriptionPrice: 0,
+        isPrivate: false,
+        groupPassword: '',
         selectedGroupTags: ["Music","Other"],
         posts: []
     },    
@@ -136,8 +136,8 @@ export class GroupService {
         groupName: "Cars",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
         groupPhoto: "../assets/imgs/wheelC.jpg",
-        groupPrivacy: groupPrivacyOption.Public,
-        groupSubscriptionPrice: 0,
+        isPrivate: false,
+        groupPassword: '',
         selectedGroupTags: ["Music","Other"],
         posts: []
     }    
@@ -148,8 +148,8 @@ export class GroupService {
         groupName: "Expert Guitar",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
         groupPhoto: "../assets/imgs/guitar.jpg",
-        groupPrivacy: groupPrivacyOption.Public,
-        groupSubscriptionPrice: 0,
+        isPrivate: false,
+        groupPassword: '',
         selectedGroupTags: ["Music","Other"],
         posts: []
     },
@@ -158,8 +158,8 @@ export class GroupService {
         groupName: "Culinary",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
         groupPhoto: "../assets/imgs/steak.jpg",
-        groupPrivacy: groupPrivacyOption.Public,
-        groupSubscriptionPrice: 0,
+        isPrivate: false,
+        groupPassword: '',
         selectedGroupTags: ["Music","Other"],
         posts: []
 
@@ -169,8 +169,8 @@ export class GroupService {
         groupName: "Computer Hardware",
         groupDescription: "A group meant for grade 5 pianists to learn and help each other",
         groupPhoto: "../assets/imgs/PC.png",
-        groupPrivacy: groupPrivacyOption.Public,
-        groupSubscriptionPrice: 0,
+        isPrivate: false,
+        groupPassword: '',
         selectedGroupTags: ["Music","Other"],
         posts: []
     },
@@ -178,8 +178,8 @@ export class GroupService {
       groupName: "Makeup",
       groupDescription: "A group meant for grade 5 pianists to learn and help each other",
       groupPhoto: "../assets/imgs/makeup.png",
-      groupPrivacy: groupPrivacyOption.Public,
-      groupSubscriptionPrice: 0,
+      isPrivate: false,
+      groupPassword: '',
       selectedGroupTags: ["Music","Other"],
       posts: []
     },
@@ -187,8 +187,8 @@ export class GroupService {
       groupName: "Electronics",
       groupDescription: "A group meant for grade 5 pianists to learn and help each other",
       groupPhoto: "../assets/imgs/plug.jpg",
-      groupPrivacy: groupPrivacyOption.Public,
-      groupSubscriptionPrice: 0,
+      isPrivate: false,
+      groupPassword: '',
       selectedGroupTags: ["Music","Other"],
       posts: []
   }        
