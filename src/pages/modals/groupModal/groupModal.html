@@ -15,10 +15,10 @@
               Group Details
             </ion-list-header>
           <ion-item>
-              <ion-input placeholder="Group Name" [(ngModel)]="newGroupDetails.groupName" ></ion-input>
+              <ion-input placeholder="Group Name" [(ngModel)]="newGroupDetails.groupName"></ion-input>
             </ion-item>
           <ion-item>
-            <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription"></ion-input>
+            <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription">ption"></ion-input>
           </ion-item>       
         </ion-list>
         <ion-list radio-group >
@@ -28,12 +28,16 @@
           
             <ion-item>
               <ion-label>Public</ion-label>
-              <ion-radio checked="true" value="go"></ion-radio>
+              <ion-radio checked="true" value="go" (click)="publicClicked()"></ion-radio>
             </ion-item>
           
             <ion-item>
               <ion-label>Private ($4.99)</ion-label>
-              <ion-radio value="rust"></ion-radio>
+              <ion-radio value="rust" (click)="togglePrivacy()"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="isPrivate">
+              <ion-input placeholder="Password" [(ngModel)]="newGroupDetails.groupPassword"></ion-input>
             </ion-item>
           </ion-list>
         <ion-list>
@@ -61,8 +65,7 @@
             <ion-item>
                 <ion-label>Other</ion-label>
                 <ion-checkbox></ion-checkbox>
-            </ion-item>
-          
+            </ion-item>        
           </ion-list>
     <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Group</button>  
   </ion-content>

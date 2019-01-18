@@ -18,6 +18,7 @@ import { GroupService } from '../../../app/services/group.service';
 })
 export class GroupModalPage {
   price: number = 0;
+  isPrivate: boolean = false;
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController,
@@ -29,10 +30,22 @@ export class GroupModalPage {
     groupName: '',
     groupDescription: '',
     groupPhoto: "../../assets/imgs/defaultGroupIcon.png",
-    groupPrivacy: groupPrivacyOption.Public,
-    groupSubscriptionPrice: 0,
+    isPrivate: false,
+    groupPassword: '',
     selectedGroupTags: ["Other"],
     posts: []
+  }
+
+  private publicClicked() {
+    this.isPrivate = false;
+    this.newGroupDetails.isPrivate = false;
+  }
+  togglePrivacy() {
+    if(this.newGroupDetails.isPrivate === true){
+      return;
+    }
+    this.newGroupDetails.isPrivate = !this.newGroupDetails.isPrivate;
+    this.isPrivate = !this.isPrivate;
   }
 
   submitGroup() {
@@ -42,11 +55,19 @@ export class GroupModalPage {
       dismissOnPageChange: true
     }).present();
     this.viewCtrl.dismiss();
+    if(this.newGroupDetails.isPrivate === false) {
+      this.newGroupDetails.groupPassword = '';
+    }
     this.groupService.subscribedGroups.push(this.newGroupDetails);
+    console.log(this.newGroupDetails);
   }
 
   exitGroupModal() {
     this.viewCtrl.dismiss();
+  }
+
+  logForm(form) {
+    console.log(form)
   }
 
   

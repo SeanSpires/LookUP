@@ -6,8 +6,8 @@ export interface GroupInterface {
     groupName: string;
     groupDescription: string;
     groupPhoto: string;
-    groupPrivacy: groupPrivacyOption;
-    groupSubscriptionPrice: string | number;
+    isPrivate: boolean;
+    groupPassword: string;
     selectedGroupTags: string[];
     posts: PostInterface[];
     
