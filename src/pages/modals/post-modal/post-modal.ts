@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, ViewController, LoadingController } from 'ionic-angular';
+import { IonicPage, ViewController, LoadingController, normalizeURL } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { PostService } from '../../../app/services/post.service';
 import { PostInterface } from '../../../app/interfaces/Post';
+import { ImagenBdPipe } from './imagen-bd-pipe';
+import { File } from '@ionic-native/file';
 
 @IonicPage()
 @Component({
@@ -13,14 +15,20 @@ import { PostInterface } from '../../../app/interfaces/Post';
 
 
 export class PostModalPage {
+  takenPhotos: any[] = [];
   myPhoto: any;
-
+  path: any;
+  filename: any;
+  imageData: any;
+  
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController, 
     private imagePicker: ImagePicker,
     public postService: PostService,
-    private camera: Camera 
+    private camera: Camera,
+    public imagePipe: ImagenBdPipe,
+    private file: File
   ) {    
   }
 
@@ -66,16 +74,22 @@ export class PostModalPage {
       quality: 70,
       destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      saveToPhotoAlbum: true
     }
     
     this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64 (DATA_URL):
-     this.myPhoto = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-     // Handle error
-    });
+      this.imageData = imageData;
+      //needs to import file plugin
+      //split the file and the path from FILE_URI result
+      let filename = imageData.substring(imageData.lastIndexOf('/')+1);
+      this.filename = filename;
+      let path =  imageData.substring(0,imageData.lastIndexOf('/')+1);
+      this.path = path;
+           //then use the method reasDataURL  btw. var_picture is ur image variable
+           this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res)  );
+      
+  })
   }
 
   exitPostModal() {

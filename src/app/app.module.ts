@@ -25,6 +25,8 @@ import { GroupService } from './services/group.service';
 import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selected-post-modal';
 import { SelectedGroupModalPage } from '../pages/modals/selected-group-modal/selected-group-modal';
 import { Camera } from '@ionic-native/camera';
+import { ImagenBdPipe } from '../pages/modals/post-modal/imagen-bd-pipe';
+import { File } from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { Camera } from '@ionic-native/camera';
     TabsPage,
     SelectedPostModalPage,
     SelectedGroupModalPage,
+    ImagenBdPipe,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { Camera } from '@ionic-native/camera';
     TabsPage,
     SelectedPostModalPage,
     SelectedGroupModalPage,
+    
   ],
   providers: [
     StatusBar,
@@ -73,7 +77,9 @@ import { Camera } from '@ionic-native/camera';
     PostService,
     GroupService,
     Camera,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ImagenBdPipe,
+    File
   ]
 })
 export class AppModule {}

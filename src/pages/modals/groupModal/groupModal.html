@@ -19,7 +19,16 @@
             </ion-item>
           <ion-item>
             <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription"></ion-input>
-          </ion-item>       
+          </ion-item>     
+          <ion-item>
+            <button ion-button (click)="takePhoto()" full>Take a Group Photo</button>
+            <p>
+              <img src="{{ myPhoto }}">
+            </p>
+            <p>ImageData: {{imageData}}</p>
+            <p>Filename: {{filename}}</p>
+            <p>Path: {{path}}</p>
+          </ion-item>  
         </ion-list>
         <ion-list radio-group >
             <ion-list-header id="privacyLabel">

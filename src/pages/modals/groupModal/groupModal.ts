@@ -4,6 +4,8 @@ import { IonicPage, NavParams, ViewController, LoadingController } from 'ionic-a
 import { groupPrivacyOption } from '../../../app/enums/groupPrivacyOption';
 import { GroupInterface } from '../../../app/interfaces/Group';
 import { GroupService } from '../../../app/services/group.service';
+import { CameraOptions, Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
 
 /**
  * Generated class for the ModalPage page.
@@ -18,20 +20,29 @@ import { GroupService } from '../../../app/services/group.service';
   templateUrl: 'GroupModal.html',
 })
 export class GroupModalPage {
+  takenPhotos: any[] = [];
+  myPhoto: any;
+  path: any;
+  filename: any;
+  imageData: any;
   isPrivate: boolean = false;
   lookUpApiUrl = "http://localhost:5000";
+
+  myFormData = new FormData();
 
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController,
     public groupService: GroupService,
+    private camera: Camera,
+    private file: File,
     params: NavParams
   ) {}
 
   newGroupDetails: GroupInterface = {
     groupName: '',
     groupDescription: '',
-    groupPhoto: "../../assets/imgs/defaultGroupIcon.png",
+    groupPhoto: '',
     isPrivate: false,
     groupPassword: '',
     selectedGroupTags: ["Other"],
@@ -52,13 +63,19 @@ export class GroupModalPage {
   }
 
   submitGroup() {
-    axios.post(this.lookUpApiUrl + '/api/group', {
-      "groupName": this.newGroupDetails.groupName,
-      "isPrivate": this.newGroupDetails.isPrivate,
-      "password": this.newGroupDetails.groupPassword,
-      "groupPhoto": this.newGroupDetails.groupPhoto,
-      "ownerId": "1"
-    }).then(res => console.log(res));
+
+    this.myFormData.append('file', this.imageData);
+    axios.post(this.lookUpApiUrl + '/api/group/image', this.myFormData).then(
+      uri => axios.post(this.lookUpApiUrl + '/api/group', {
+        "groupName": this.newGroupDetails.groupName,
+        "isPrivate": this.newGroupDetails.isPrivate,
+        "password": this.newGroupDetails.groupPassword,
+        "groupPhoto": uri,
+        "ownerId": "1"
+      }).then(res => console.log(res))
+    );
+
+    
 
     this.loadingCtrl.create({
       content: 'Please wait...',
@@ -70,6 +87,7 @@ export class GroupModalPage {
       this.newGroupDetails.groupPassword = '';
     }
     this.groupService.subscribedGroups.push(this.newGroupDetails);
+    this.newGroupDetails.groupPhoto = this.myPhoto;
     console.log(this.newGroupDetails);
   }
 
@@ -85,6 +103,29 @@ export class GroupModalPage {
 
   logForm(form) {
     console.log(form)
+  }
+
+  takePhoto() {
+    const options: CameraOptions = {
+      quality: 70,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      saveToPhotoAlbum: true
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+      this.imageData = imageData;
+      //needs to import file plugin
+      //split the file and the path from FILE_URI result
+      let filename = imageData.substring(imageData.lastIndexOf('/')+1);
+      this.filename = filename;
+      let path =  imageData.substring(0,imageData.lastIndexOf('/')+1);
+      this.path = path;
+           //then use the method reasDataURL  btw. var_picture is ur image variable
+           this.file.readAsDataURL(path, filename).then(res=> this.myPhoto = (res));
+      
+  })
   }
 
   

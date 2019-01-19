@@ -18,7 +18,13 @@
 <ion-content padding>
     <button ion-button (click)="openImageGallery()" full>Select Videos/Images to Post</button>
     <button ion-button (click)="takePhoto()" full>Take a Video or Photo</button>
-    <p><img src=" {{ myPhoto }}"></p>
+    <!-- <p align="center"><img src="{{ myPhoto }}"></p> -->
+    <p *ngFor="let photo of takenPhotos">
+      <img src="{{ photo }}">
+    </p>
+    <p>ImageData: {{imageData}}</p>
+    <p>Filename: {{filename}}</p>
+    <p>Path: {{path}}</p>
 
     <ion-list>
       <ion-list-header>
