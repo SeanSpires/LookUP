@@ -24,6 +24,7 @@ import { PostService } from './services/post.service';
 import { GroupService } from './services/group.service';
 import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selected-post-modal';
 import { SelectedGroupModalPage } from '../pages/modals/selected-group-modal/selected-group-modal';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { SelectedGroupModalPage } from '../pages/modals/selected-group-modal/sel
     ImagePicker,
     PostService,
     GroupService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

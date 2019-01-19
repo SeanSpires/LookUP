@@ -17,6 +17,9 @@
 
 <ion-content padding>
     <button ion-button (click)="openImageGallery()" full>Select Videos/Images to Post</button>
+    <button ion-button (click)="takePhoto()" full>Take a Video or Photo</button>
+    <p><img src=" {{ myPhoto }}"></p>
+
     <ion-list>
       <ion-list-header>
           Post Details
