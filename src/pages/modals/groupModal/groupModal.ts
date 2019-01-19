@@ -1,3 +1,4 @@
+import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController, LoadingController } from 'ionic-angular';
 import { groupPrivacyOption } from '../../../app/enums/groupPrivacyOption';
@@ -17,8 +18,9 @@ import { GroupService } from '../../../app/services/group.service';
   templateUrl: 'GroupModal.html',
 })
 export class GroupModalPage {
-  price: number = 0;
   isPrivate: boolean = false;
+  lookUpApiUrl = "http://localhost:5000";
+
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController,
@@ -40,6 +42,7 @@ export class GroupModalPage {
     this.isPrivate = false;
     this.newGroupDetails.isPrivate = false;
   }
+  
   togglePrivacy() {
     if(this.newGroupDetails.isPrivate === true){
       return;
@@ -49,6 +52,14 @@ export class GroupModalPage {
   }
 
   submitGroup() {
+    axios.post(this.lookUpApiUrl + '/api/group', {
+      "groupName": this.newGroupDetails.groupName,
+      "isPrivate": this.newGroupDetails.isPrivate,
+      "password": this.newGroupDetails.groupPassword,
+      "groupPhoto": this.newGroupDetails.groupPhoto,
+      "ownerId": "1"
+    }).then(res => console.log(res));
+
     this.loadingCtrl.create({
       content: 'Please wait...',
       duration: 2000,
@@ -60,6 +71,12 @@ export class GroupModalPage {
     }
     this.groupService.subscribedGroups.push(this.newGroupDetails);
     console.log(this.newGroupDetails);
+  }
+
+  getGroup() {
+    let data:any = [];
+    axios.get(this.lookUpApiUrl + '/api/group/Piano').then(res => 
+      data = res);
   }
 
   exitGroupModal() {
