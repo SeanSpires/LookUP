@@ -65,16 +65,16 @@ export class GroupModalPage {
   }
 
   submitGroup() {
-    this.myFormData.append('file', this.imageData);
-    axios.post(this.lookUpApiUrl + '/api/group/image', this.myFormData).then(
-      uri => axios.post(this.lookUpApiUrl + '/api/group', {
-        "groupName": this.newGroupDetails.groupName,
-        "isPrivate": this.newGroupDetails.isPrivate,
-        "password": this.newGroupDetails.groupPassword,
-        "groupPhoto": uri,
-        "ownerId": "1"
-      }).then(res => console.log(res))
-    );
+    // this.myFormData.append('file', this.imageData);
+    // axios.post(this.lookUpApiUrl + '/api/group/image', this.myFormData).then(
+    //   uri => axios.post(this.lookUpApiUrl + '/api/group', {
+    //     "groupName": this.newGroupDetails.groupName,
+    //     "isPrivate": this.newGroupDetails.isPrivate,
+    //     "password": this.newGroupDetails.groupPassword,
+    //     "groupPhoto": uri,
+    //     "ownerId": "1"
+    //   }).then(res => console.log(res))
+    // );
 
     
 
@@ -87,8 +87,8 @@ export class GroupModalPage {
     if(this.newGroupDetails.isPrivate === false) {
       this.newGroupDetails.groupPassword = '';
     }
-    this.groupService.subscribedGroups.push(this.newGroupDetails);
     this.newGroupDetails.groupPhoto = this.myPhoto;
+    this.groupService.subscribedGroups.push(this.newGroupDetails);
     console.log(this.newGroupDetails);
   }
 
@@ -125,6 +125,8 @@ export class GroupModalPage {
       this.path = path;
            //then use the method reasDataURL  btw. var_picture is ur image variable
            this.file.readAsDataURL(path, filename).then(res=> this.myPhoto = (res));
+
+      this.file = imageData;
       
   })
   }
@@ -138,7 +140,7 @@ export class GroupModalPage {
       this.imageData = results[i];
       let filename = results[i].substring(results[i].lastIndexOf('/')+1);
       let path =  results[i].substring(0,results[i].lastIndexOf('/')+1);   
-      this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));
+      this.file.readAsDataURL(path, filename).then(res=> this.myPhoto = (res));
         // this.takenPhotos.push(results[i]);
           console.log('Image URI: ' + results[i]);
       }

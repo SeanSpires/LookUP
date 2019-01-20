@@ -18,6 +18,7 @@
 <ion-content padding>
     <button ion-button (click)="openImageGallery()" full>Select Videos/Images to Post</button>
     <button ion-button (click)="takePhoto()" full>Take a Video or Photo</button>
+    <button ion-button full (click)="captureVideo()">Capture Video</button>
     <!-- <p align="center"><img src="{{ myPhoto }}"></p> -->
     <p *ngFor="let photo of takenPhotos">
       <img src="{{ photo }}">
@@ -62,5 +63,19 @@
             <ion-radio value="connors-coding" (ionSelect)="radioChecked('Connors Coding')"></ion-radio>
         </ion-item>
       </ion-list>
-    <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Post</button>  
+      <!-- <ion-list>
+        <ion-item *ngFor="let file of mediaFiles" tappable (click)="play(file)" text-wrap>
+          {{ file.name }}
+          <p>{{ file.size / 1000 / 1000 | number }} MB</p>
+        </ion-item> -->
+      <!-- </ion-list> -->
+     
+      <!-- <video controls autoplay #myvideo> -->
+      <!-- </video> -->
+      <p>
+        {{videoSource}}
+      </p>
+      <button (click)="play()" full ion-button>click to play</button>
+      <!-- <video #myvideo controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" width="300" height="300" class="videoPlayer"></video> -->
+    <!-- <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Post</button>   -->
 </ion-content>

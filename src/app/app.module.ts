@@ -27,6 +27,10 @@ import { SelectedGroupModalPage } from '../pages/modals/selected-group-modal/sel
 import { Camera } from '@ionic-native/camera';
 import { ImagenBdPipe } from '../pages/modals/post-modal/imagen-bd-pipe';
 import { File } from '@ionic-native/file';
+import { MediaCapture } from '@ionic-native/media-capture';
+import { Media } from '@ionic-native/media';
+import { VideoPlayer } from '@ionic-native/video-player';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,8 @@ import { File } from '@ionic-native/file';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -79,7 +84,10 @@ import { File } from '@ionic-native/file';
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ImagenBdPipe,
-    File
+    File,
+    MediaCapture,
+    Media,
+    VideoPlayer,
   ]
 })
 export class AppModule {}
