@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ViewController, LoadingController, normalizeURL } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { ImagePicker } from '@ionic-native/image-picker';
+import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { PostService } from '../../../app/services/post.service';
 import { PostInterface } from '../../../app/interfaces/Post';
 import { ImagenBdPipe } from './imagen-bd-pipe';
@@ -20,6 +20,7 @@ export class PostModalPage {
   path: any;
   filename: any;
   imageData: any;
+  testImage: any;
   
   constructor(
     public viewCtrl: ViewController, 
@@ -28,7 +29,8 @@ export class PostModalPage {
     public postService: PostService,
     private camera: Camera,
     public imagePipe: ImagenBdPipe,
-    private file: File
+    private file: File,
+    
   ) {    
   }
 
@@ -45,15 +47,18 @@ export class PostModalPage {
   }
 
   openImageGallery() {
-
-    this.imagePicker.getPictures({
-      maximumImagesCount: 5,
-      
-    }).then(function printImages(results) {
+    const options: ImagePickerOptions = {
+      maximumImagesCount: 5
+    }
+    this.imagePicker.getPictures(options).then((results) => {
       for (var i = 0; i < results.length; i++) {
-        console.log('Image URI: ' + results[i]);
+      let filename = results[i].substring(results[i].lastIndexOf('/')+1);
+      let path =  results[i].substring(0,results[i].lastIndexOf('/')+1);   
+      this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));
+        // this.takenPhotos.push(results[i]);
+          console.log('Image URI: ' + results[i]);
       }
-    }, (err) => {console.log('Could not handle images')});
+    }, (err) => { });
   }
    
   ionViewDidLoad() {
@@ -75,7 +80,8 @@ export class PostModalPage {
       destinationType: this.camera.DestinationType.FILE_URI,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      saveToPhotoAlbum: true
+      saveToPhotoAlbum: true,
+      correctOrientation: true
     }
     
     this.camera.getPicture(options).then((imageData) => {
@@ -87,7 +93,7 @@ export class PostModalPage {
       let path =  imageData.substring(0,imageData.lastIndexOf('/')+1);
       this.path = path;
            //then use the method reasDataURL  btw. var_picture is ur image variable
-           this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res)  );
+           this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));
       
   })
   }

@@ -6,6 +6,7 @@ import { GroupInterface } from '../../../app/interfaces/Group';
 import { GroupService } from '../../../app/services/group.service';
 import { CameraOptions, Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
+import { ImagePickerOptions, ImagePicker } from '@ionic-native/image-picker';
 
 /**
  * Generated class for the ModalPage page.
@@ -34,6 +35,7 @@ export class GroupModalPage {
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController,
     public groupService: GroupService,
+    private imagePicker: ImagePicker,
     private camera: Camera,
     private file: File,
     params: NavParams
@@ -63,7 +65,6 @@ export class GroupModalPage {
   }
 
   submitGroup() {
-
     this.myFormData.append('file', this.imageData);
     axios.post(this.lookUpApiUrl + '/api/group/image', this.myFormData).then(
       uri => axios.post(this.lookUpApiUrl + '/api/group', {
@@ -126,6 +127,22 @@ export class GroupModalPage {
            this.file.readAsDataURL(path, filename).then(res=> this.myPhoto = (res));
       
   })
+  }
+
+  openImageGallery() {
+    const options: ImagePickerOptions = {
+      maximumImagesCount: 1
+    }
+    this.imagePicker.getPictures(options).then((results) => {
+      for (var i = 0; i < results.length; i++) {
+      this.imageData = results[i];
+      let filename = results[i].substring(results[i].lastIndexOf('/')+1);
+      let path =  results[i].substring(0,results[i].lastIndexOf('/')+1);   
+      this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));
+        // this.takenPhotos.push(results[i]);
+          console.log('Image URI: ' + results[i]);
+      }
+    }, (err) => { });
   }
 
   
