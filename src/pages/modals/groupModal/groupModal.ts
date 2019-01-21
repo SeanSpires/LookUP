@@ -20,6 +20,8 @@ import { ImagePickerOptions, ImagePicker } from '@ionic-native/image-picker';
   selector: 'page-modal',
   templateUrl: 'GroupModal.html',
 })
+
+
 export class GroupModalPage {
   takenPhotos: any[] = [];
   myPhoto: any;
@@ -27,7 +29,7 @@ export class GroupModalPage {
   filename: any;
   imageData: any;
   isPrivate: boolean = false;
-  lookUpApiUrl = "http://localhost:5000";
+  lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
 
   myFormData = new FormData();
 
@@ -65,16 +67,20 @@ export class GroupModalPage {
   }
 
   submitGroup() {
-    // this.myFormData.append('file', this.imageData);
-    // axios.post(this.lookUpApiUrl + '/api/group/image', this.myFormData).then(
-    //   uri => axios.post(this.lookUpApiUrl + '/api/group', {
-    //     "groupName": this.newGroupDetails.groupName,
-    //     "isPrivate": this.newGroupDetails.isPrivate,
-    //     "password": this.newGroupDetails.groupPassword,
-    //     "groupPhoto": uri,
-    //     "ownerId": "1"
-    //   }).then(res => console.log(res))
-    // );
+    this.myFormData.append('file', this.imageData);
+    axios.post(this.lookUpApiUrl + '/api/group/mediaUpload', this.myFormData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }).then(
+      uri => axios.post(this.lookUpApiUrl + '/api/group/create', {
+        "groupName": this.newGroupDetails.groupName,
+        "isPrivate": this.newGroupDetails.isPrivate,
+        "password": this.newGroupDetails.groupPassword,
+        "groupPhoto": uri,
+        "ownerId": "1"
+      }).then(res => console.log(res))
+    );
 
     
 

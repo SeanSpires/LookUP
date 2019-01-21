@@ -24,6 +24,8 @@ export class GroupService {
               avatar: "../assets/imgs/anime.jpg",
               postOrigin: "Grade 5 Piano",
               mediaFiles: ["../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
+              videoThumbnail: '',
+              videoURL: '',
               user: "Rachel Glass",
               comments: [{
                 id: 1,
@@ -58,6 +60,8 @@ export class GroupService {
               avatar: "../assets/imgs/bharat.jpg",
               postOrigin: "Grade 5 Piano",
               mediaFiles: ["../assets/imgs/trills.jpg"],
+              videoThumbnail: '',
+              videoURL: '',
               user: "Bharat Rasali",
               comments: [{
                 id: 1,
@@ -91,6 +95,8 @@ export class GroupService {
               date: "16hr",
               avatar: "../assets/imgs/sean.jpg",
               postOrigin: "Grade 5 Piano",
+              videoThumbnail: '',
+              videoURL: '',
               mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
               user: "Sean Spires",
               comments: [{
@@ -193,10 +199,4 @@ export class GroupService {
       posts: []
   }        
    ]
-
-   
-   
-
-
-
 }

@@ -23,9 +23,10 @@
     <p *ngFor="let photo of takenPhotos">
       <img src="{{ photo }}">
     </p>
-    <p>ImageData: {{imageData}}</p>
+    <p>videoURL: {{videoURL}}</p>
     <p>Filename: {{filename}}</p>
     <p>Path: {{path}}</p>
+    <!-- <p>Thumbnail: {{thumbnail}}</p> -->
     <p></p>
 
     <ion-list>
@@ -37,7 +38,7 @@
         </ion-item>
     </ion-list>
     <ion-list radio-group>
-        <ion-label id="groupsToPostToLabel">Groups to Post to</ion-label>
+        <ion-label id="groupsToPostToLabel">Group to Post to</ion-label>
         <ion-item>
           <ion-label>5th Grade Piano</ion-label>
           <ion-radio value="5th-grade-piano" (ionSelect)="radioChecked('5th Grade Piano')"></ion-radio>
@@ -63,19 +64,10 @@
             <ion-radio value="connors-coding" (ionSelect)="radioChecked('Connors Coding')"></ion-radio>
         </ion-item>
       </ion-list>
-      <!-- <ion-list>
-        <ion-item *ngFor="let file of mediaFiles" tappable (click)="play(file)" text-wrap>
-          {{ file.name }}
-          <p>{{ file.size / 1000 / 1000 | number }} MB</p>
-        </ion-item> -->
-      <!-- </ion-list> -->
-     
-      <!-- <video controls autoplay #myvideo> -->
-      <!-- </video> -->
       <p>
         {{videoSource}}
       </p>
       <button (click)="play()" full ion-button>click to play</button>
       <!-- <video #myvideo controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" width="300" height="300" class="videoPlayer"></video> -->
-    <!-- <button ion-button color="secondary" full (click)="submitGroup()" id="submitBut">Submit Post</button>   -->
+    <button ion-button color="secondary" full (click)="submitPost()" id="submitBut">Submit Post</button>  
 </ion-content>

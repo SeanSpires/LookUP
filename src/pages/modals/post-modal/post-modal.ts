@@ -10,6 +10,7 @@ import { Media, MediaObject } from '@ionic-native/media';
 import { MediaCapture, CaptureVideoOptions, MediaFile, CaptureError } from '@ionic-native/media-capture';
 import { Storage } from '@ionic/storage';
 import { VideoPlayer, VideoOptions } from '@ionic-native/video-player';
+import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor';
 
 const MEDIA_FILES_KEY = 'mediaFiles';
 
@@ -24,14 +25,16 @@ export class PostModalPage {
   @ViewChild('myvideo') myVideo: any;
   videoURL: any;
   takenPhotos: any[] = [];
+  videoThumbnail: String;
   myPhoto: any;
-  path: any;
-  filename: any;
+  path: string;
+  filename: string;
   imageData: any;
   testImage: any;
   videoSource: any;
   vidSource2: any;
   videoOptions: VideoOptions
+  thumbnail: string;
    
   constructor(
     public viewCtrl: ViewController, 
@@ -44,29 +47,31 @@ export class PostModalPage {
     private mediaCapture: MediaCapture,
     private storage: Storage,
     private media: Media,
-    private videoPlayer: VideoPlayer
+    private videoPlayer: VideoPlayer,
+    private videoEditor: VideoEditor,
     
   ) {    
   }
+
+  newPostDetails: PostInterface = {
+    id: '1',
+    desc: '',
+    date: new Date(),
+    avatar: '../../assets/imgs/sean.jpg',
+    postOrigin: '',
+    mediaFiles: [], // URI or Base64 Encoded
+    videoThumbnail: '',
+    videoURL: '',
+    user: 'Sean',
+    comments: [],
+    favourites: 0,
+  }
+
 
   ionViewDidLoad() {
     this.storage.get(MEDIA_FILES_KEY).then(res => {
       this.mediaFiles = JSON.parse(res) || [];
     })
-  }
-
-  
-
-  newPostDetails: PostInterface = {
-    id: 1,
-    desc: 'Could someone help?',
-    date: '1min',
-    avatar: "../../assets/imgs/sean.jpg",
-    postOrigin: '',
-    mediaFiles: ["../../assets/imgs/pianoHands2.png", "../../assets/imgs/sonata.png", "../../assets/imgs/trills.jpg"],
-    user: "Sean Spires",
-    comments: [],
-    favourites: 0
   }
 
   openImageGallery() {
@@ -84,12 +89,15 @@ export class PostModalPage {
     }, (err) => { });
   }
    
-  submitGroup() {
+  submitPost() {
     this.loadingCtrl.create({
       content: 'Please wait...',
       duration: 2000,
       dismissOnPageChange: true
     }).present();
+    this.newPostDetails.mediaFiles = this.takenPhotos;
+    this.newPostDetails.videoURL = this.videoURL;
+    this.newPostDetails.videoThumbnail = this.videoThumbnail;
     this.postService.posts.unshift(this.newPostDetails);
     this.viewCtrl.dismiss();
   }
@@ -134,17 +142,19 @@ export class PostModalPage {
       let res1 = JSON.parse(videoData);
   
       this.videoURL = res1[0]['fullPath'];
-      let filename = this.videoURL.substring(this.videoURL.lastIndexOf('/')+1);
+      let option:CreateThumbnailOptions = {fileUri: this.videoURL, outputFileName: 'thumbnail'};
+      this.videoEditor.createThumbnail(option).then(result=>{
+        //result-path of thumbnail
+        this.thumbnail = 'file://' + String(result);
+        // this.thumbnail = 'file://' + this.thumbnail;
+      let filename = String(this.thumbnail.substring(this.thumbnail.lastIndexOf('/')+1));
       this.filename = filename;
-      let path =  this.videoURL.substring(0,this.videoURL.lastIndexOf('/')+1);
+      let path =  String(this.thumbnail.substring(0,this.thumbnail.lastIndexOf('/')+1));
       this.path = path;
-      this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));
-  
-      let video = this.myVideo.nativeElement;
-  
-      video.src =  this.videoURL;
-      this.videoSource = this.videoURL;
-      // video.play();
+      this.file.readAsDataURL(path, filename).then(res=> this.videoThumbnail = res);
+      }).catch(e=>{
+     // alert('fail video editor');
+    });
   }, (err) => { console.log(err) });
   }
 
@@ -158,32 +168,6 @@ export class PostModalPage {
       console.log(e);
     }
   }
-  
-  // play(myFile) {
-  //   if (myFile.name.indexOf('.wav') > -1) {
-  //     const audioFile: MediaObject = this.media.create(myFile.localURL);
-  //     audioFile.play();
-  //   } else {
-  //     let path = this.file.dataDirectory + myFile.name;
-  //     let url = path.replace(/^file:\/\//, '');
-  //     let video = this.myVideo.nativeElement;
-  //     video.src = url;
-  //     video.play();
-  //   }
-  // }
- 
-  // storeMediaFiles(files) {
-  //   this.storage.get(MEDIA_FILES_KEY).then(res => {
-  //     if (res) {
-  //       let arr = JSON.parse(res);
-  //       arr = arr.concat(files);
-  //       this.storage.set(MEDIA_FILES_KEY, JSON.stringify(arr));
-  //     } else {
-  //       this.storage.set(MEDIA_FILES_KEY, JSON.stringify(files))
-  //     }
-  //     this.mediaFiles = this.mediaFiles.concat(files);
-  //   })
-  // }
 
   exitPostModal() {
     this.viewCtrl.dismiss();

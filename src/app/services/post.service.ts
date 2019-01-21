@@ -17,6 +17,8 @@ export class PostService {
       date: "50min",
       avatar: "../assets/imgs/sean.jpg",
       postOrigin: "Grade 5 Piano",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Sean Spires",
       comments: [{
@@ -51,6 +53,8 @@ export class PostService {
       date: "2hr",
       avatar: "../assets/imgs/michelle.jpg",
       postOrigin: "Cars",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/carGarage.png", "../assets/imgs/jeepEngine.jpg"],
       user: "Michelle Lam",
       comments: [{
@@ -83,6 +87,8 @@ export class PostService {
       date: "2hr",
       avatar: "../assets/imgs/coke.png",
       postOrigin: "Sponsored",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/cokeRange.png"],
       user: "Coca Cola",
       comments: [],
@@ -94,6 +100,8 @@ export class PostService {
       date: "5hr",
       avatar: "../assets/imgs/bharat.jpg",
       postOrigin: "Tennis",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/tennis.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Samuel Spid",
       comments: [{
@@ -127,6 +135,8 @@ export class PostService {
       date: "50min",
       avatar: "../assets/imgs/sean.jpg",
       postOrigin: "Grade 5 Piano",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Sean Spires",
       comments: [{
@@ -161,6 +171,8 @@ export class PostService {
       date: "2hr",
       avatar: "../assets/imgs/michelle.jpg",
       postOrigin: "Cars",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/carGarage.png", "../assets/imgs/jeepEngine.jpg"],
       user: "Michelle Lam",
       comments: [{
@@ -193,6 +205,8 @@ export class PostService {
       date: "2hr",
       avatar: "../assets/imgs/coke.png",
       postOrigin: "Sponsored",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/cokeRange.png"],
       user: "Coca Cola",
       comments: [],
@@ -204,6 +218,8 @@ export class PostService {
       date: "5hr",
       avatar: "../assets/imgs/bharat.jpg",
       postOrigin: "Tennis",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/tennis.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Samuel Spid",
       comments: [{
@@ -237,6 +253,8 @@ export class PostService {
       date: "50min",
       avatar: "../assets/imgs/sean.jpg",
       postOrigin: "Grade 5 Piano",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Sean Spires",
       comments: [{
@@ -271,6 +289,8 @@ export class PostService {
       date: "2hr",
       avatar: "../assets/imgs/michelle.jpg",
       postOrigin: "Cars",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/carGarage.png", "../assets/imgs/jeepEngine.jpg"],
       user: "Michelle Lam",
       comments: [{
@@ -303,6 +323,8 @@ export class PostService {
       date: "2hr",
       avatar: "../assets/imgs/coke.png",
       postOrigin: "Sponsored",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/cokeRange.png"],
       user: "Coca Cola",
       comments: [],
@@ -314,6 +336,8 @@ export class PostService {
       date: "5hr",
       avatar: "../assets/imgs/bharat.jpg",
       postOrigin: "Tennis",
+      videoThumbnail: '',
+      videoURL: '',
       mediaFiles: ["../assets/imgs/tennis.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
       user: "Samuel Spid",
       comments: [{

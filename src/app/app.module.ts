@@ -31,6 +31,7 @@ import { MediaCapture } from '@ionic-native/media-capture';
 import { Media } from '@ionic-native/media';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { IonicStorageModule } from '@ionic/storage';
+import { VideoEditor } from '@ionic-native/video-editor';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { IonicStorageModule } from '@ionic/storage';
     MediaCapture,
     Media,
     VideoPlayer,
+    VideoEditor
   ]
 })
 export class AppModule {}
