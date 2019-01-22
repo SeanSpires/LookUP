@@ -17,8 +17,6 @@ export class HomePage  {
               public postService: PostService) {
               
   }
-  
- 
 
   presentModal() {
     let myCreatePostModal = this.modalController.create(PostModalPage);

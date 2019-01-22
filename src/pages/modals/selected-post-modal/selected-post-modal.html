@@ -16,15 +16,23 @@
             <img src={{postService.currentSelectedPost.avatar}}>
           </ion-avatar>
           <h2>{{postService.currentSelectedPost.user}}</h2>
-          <p>{{postService.currentSelectedPost.postOrigin}}</p>
+          <p>{{postService.currentSelectedPost.postOrigin}}
+            
+          </p>
         </ion-item>
   
         <ion-slides pager>
             <ion-slide *ngFor="let file of postService.currentSelectedPost.mediaFiles">
                 <img src={{file}} class="slide-image">
             </ion-slide>
-            
-          </ion-slides>
+            <ion-slide 
+            *ngIf="!(!postService.currentSelectedPost.videoThumbnail ||
+                   0 === postService.currentSelectedPost.videoThumbnail.length)"
+                   (click)="playVideo(postService.currentSelectedPost.videoURL)"
+                   >
+              <img src={{postService.currentSelectedPost.videoThumbnail}} class="slide-image"> 
+          </ion-slide>
+        </ion-slides>
 
         <ion-card-content>
           <p>{{postService.currentSelectedPost.desc}}</p>
