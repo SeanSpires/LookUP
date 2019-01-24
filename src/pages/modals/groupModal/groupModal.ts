@@ -31,8 +31,6 @@ export class GroupModalPage {
   isPrivate: boolean = false;
   lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
 
-  myFormData = new FormData();
-
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController,
@@ -67,8 +65,9 @@ export class GroupModalPage {
   }
 
   submitGroup() {
-    this.myFormData.append('file', this.imageData);
-    axios.post(this.lookUpApiUrl + '/api/group/mediaUpload', this.myFormData, {
+    const myFormData = new FormData();
+    myFormData.append('file', this.imageData);
+    axios.post(this.lookUpApiUrl + '/api/group/mediaUpload', myFormData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
