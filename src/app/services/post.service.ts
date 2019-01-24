@@ -9,7 +9,6 @@ export class PostService {
 
   public currentSelectedPost: PostInterface;
 
-  
   public posts: PostInterface[] = [
     {
       desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",

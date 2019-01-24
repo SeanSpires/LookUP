@@ -24,7 +24,11 @@ page-selected-post-modal {
 
     .contentBack {
         background-color: rgb(247, 247, 247)
-    }  
+    }
+    .swiper-slide img {
+        width: 100%;
+        max-height: 350px;
+     }  
 
     
 }
