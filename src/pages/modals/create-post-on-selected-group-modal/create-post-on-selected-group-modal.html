@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+        <button ion-button (click)="exitPostModal()">Close</button>
+    </ion-buttons>
+    <ion-title>Ask Something</ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding>
+      <button ion-button (click)="openImageGallery()" full>Select Videos/Images to Post</button>
+      <button ion-button (click)="takePhoto()" full>Take a Video or Photo</button>
+      <button ion-button full (click)="captureVideo()">Capture Video</button>
+      <!-- <p align="center"><img src="{{ myPhoto }}"></p> -->
+      <p *ngFor="let photo of takenPhotos">
+        <img src="{{ photo }}">
+      </p>
+      <p>videoURL: {{videoURL}}</p>
+      <p>Filename: {{filename}}</p>
+      <p>Path: {{path}}</p>
+      <!-- <p>Thumbnail: {{thumbnail}}</p> -->
+      <p></p>
+      <img src="{{videoThumbnail}}">
+  
+      <ion-list>
+        <ion-list-header>
+            Post Details
+          </ion-list-header>
+        <ion-item>
+            <ion-input placeholder="Description" [(ngModel)]="newPostDetails.desc" ></ion-input>
+          </ion-item>
+      </ion-list>
+      <p>
+        {{videoSource}}
+      </p>
+      <button (click)="play()" full ion-button>click to play</button>
+      <button ion-button color="secondary" full (click)="submitPost()" id="submitBut">Submit Post</button>  
+  </ion-content>
+  

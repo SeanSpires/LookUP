@@ -16,11 +16,10 @@ const MEDIA_FILES_KEY = 'mediaFiles';
 
 @IonicPage()
 @Component({
-  selector: 'page-post-modal',
-  templateUrl: 'post-modal.html',
+  selector: 'page-create-post-on-selected-group-modal',
+  templateUrl: 'create-post-on-selected-group-modal.html',
 })
-
-export class PostModalPage {
+export class CreatePostOnSelectedGroupModalPage {
   mediaFiles = [];
   @ViewChild('myvideo') myVideo: any;
   videoURL: any;
@@ -98,6 +97,7 @@ export class PostModalPage {
     this.newPostDetails.mediaFiles = this.takenPhotos;
     this.newPostDetails.videoURL = this.videoURL;
     this.newPostDetails.videoThumbnail = this.videoThumbnail;
+    this.newPostDetails.postOrigin = this.groupService.currentSelectedGroup.groupName;
     this.groupService.subscribedGroups.forEach(element => {
       if(element.groupName === this.newPostDetails.postOrigin){
         element.posts.unshift(this.newPostDetails);
@@ -119,13 +119,10 @@ export class PostModalPage {
     
     this.camera.getPicture(options).then((imageData) => {
       this.imageData = imageData;
-      //needs to import file plugin
-      //split the file and the path from FILE_URI result
       let filename = imageData.substring(imageData.lastIndexOf('/')+1);
       this.filename = filename;
       let path =  imageData.substring(0,imageData.lastIndexOf('/')+1);
       this.path = path;
-           //then use the method reasDataURL  btw. var_picture is ur image variable
            this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));   
   })
   }
@@ -149,16 +146,13 @@ export class PostModalPage {
       this.videoURL = res1[0]['fullPath'];
       let option:CreateThumbnailOptions = {fileUri: this.videoURL, outputFileName: 'thumbnail'};
       this.videoEditor.createThumbnail(option).then(result=>{
-        //result-path of thumbnail
         this.thumbnail = 'file://' + String(result);
-        // this.thumbnail = 'file://' + this.thumbnail;
       let filename = String(this.thumbnail.substring(this.thumbnail.lastIndexOf('/')+1));
       this.filename = filename;
       let path =  String(this.thumbnail.substring(0,this.thumbnail.lastIndexOf('/')+1));
       this.path = path;
       this.file.readAsDataURL(path, filename).then(res=> this.videoThumbnail = res);
       }).catch(e=>{
-     // alert('fail video editor');
     });
   }, (err) => { console.log(err) });
   }

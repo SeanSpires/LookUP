@@ -5,13 +5,7 @@ import { PostModalPage } from '../post-modal/post-modal';
 import { PostInterface } from '../../../app/interfaces/Post';
 import { PostService } from '../../../app/services/post.service';
 import { SelectedPostModalPage } from '../selected-post-modal/selected-post-modal';
-
-/**
- * Generated class for the SelectedGroupModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CreatePostOnSelectedGroupModalPage } from '../create-post-on-selected-group-modal/create-post-on-selected-group-modal';
 
 @IonicPage()
 @Component({
@@ -38,7 +32,7 @@ export class SelectedGroupModalPage {
   }
 
   presentModal() {
-    let myCreatePostModal = this.modalController.create(PostModalPage);
+    let myCreatePostModal = this.modalController.create(CreatePostOnSelectedGroupModalPage);
     myCreatePostModal.present();
   }
 

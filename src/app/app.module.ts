@@ -25,7 +25,6 @@ import { GroupService } from './services/group.service';
 import { SelectedPostModalPage } from '../pages/modals/selected-post-modal/selected-post-modal';
 import { SelectedGroupModalPage } from '../pages/modals/selected-group-modal/selected-group-modal';
 import { Camera } from '@ionic-native/camera';
-import { ImagenBdPipe } from '../pages/modals/post-modal/imagen-bd-pipe';
 import { File } from '@ionic-native/file';
 import { MediaCapture } from '@ionic-native/media-capture';
 import { Media } from '@ionic-native/media';
@@ -33,6 +32,8 @@ import { VideoPlayer } from '@ionic-native/video-player';
 import { IonicStorageModule } from '@ionic/storage';
 import { VideoEditor } from '@ionic-native/video-editor';
 import { CommentModalPage } from '../pages/modals/comment-modal/comment-modal';
+import { SelectedGroupModalPageModule } from '../pages/modals/selected-group-modal/selected-group-modal.module';
+import { CreatePostOnSelectedGroupModalPage } from '../pages/modals/create-post-on-selected-group-modal/create-post-on-selected-group-modal';
 
 @NgModule({
   declarations: [
@@ -52,12 +53,12 @@ import { CommentModalPage } from '../pages/modals/comment-modal/comment-modal';
     SelectedPostModalPage,
     SelectedGroupModalPage,
     CommentModalPage,
-    ImagenBdPipe,
+    CreatePostOnSelectedGroupModalPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,7 +77,8 @@ import { CommentModalPage } from '../pages/modals/comment-modal/comment-modal';
     TabsPage,
     SelectedPostModalPage,
     SelectedGroupModalPage,
-    CommentModalPage
+    CommentModalPage,
+    CreatePostOnSelectedGroupModalPage
     
   ],
   providers: [
@@ -87,7 +89,6 @@ import { CommentModalPage } from '../pages/modals/comment-modal/comment-modal';
     GroupService,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ImagenBdPipe,
     File,
     MediaCapture,
     Media,
