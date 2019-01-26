@@ -1,10 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, ViewController, LoadingController, normalizeURL } from 'ionic-angular';
+import { IonicPage, ViewController, LoadingController, normalizeURL, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { PostService } from '../../../app/services/post.service';
 import { PostInterface } from '../../../app/interfaces/Post';
-import { ImagenBdPipe } from './imagen-bd-pipe';
 import { File } from '@ionic-native/file';
 import { Media, MediaObject } from '@ionic-native/media';
 import { MediaCapture, CaptureVideoOptions, MediaFile, CaptureError } from '@ionic-native/media-capture';
@@ -12,16 +11,16 @@ import { Storage } from '@ionic/storage';
 import { VideoPlayer, VideoOptions } from '@ionic-native/video-player';
 import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor';
 import { GroupService } from '../../../app/services/group.service';
+import { CommentInterface } from '../../../app/interfaces/Comment';
 
 const MEDIA_FILES_KEY = 'mediaFiles';
 
 @IonicPage()
 @Component({
-  selector: 'page-post-modal',
-  templateUrl: 'post-modal.html',
+  selector: 'page-comment-modal',
+  templateUrl: 'comment-modal.html',
 })
-
-export class PostModalPage {
+export class CommentModalPage {
   mediaFiles = [];
   @ViewChild('myvideo') myVideo: any;
   videoURL: any;
@@ -36,39 +35,32 @@ export class PostModalPage {
   vidSource2: any;
   videoOptions: VideoOptions
   thumbnail: string;
-   
+
   constructor(
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController, 
     private imagePicker: ImagePicker,
     public postService: PostService,
     private camera: Camera,
-    public imagePipe: ImagenBdPipe,
     private file: File,
     private mediaCapture: MediaCapture,
     private storage: Storage,
     private media: Media,
     private videoPlayer: VideoPlayer,
     private videoEditor: VideoEditor,
-    public groupService : GroupService
-    
+    public groupService : GroupService    
   ) {    
   }
-
-  newPostDetails: PostInterface = {
+  
+  newCommentDetails: CommentInterface = {
     id: '1',
-    desc: '',
-    date: new Date(),
+    description: '',
     avatar: '../../assets/imgs/sean.jpg',
-    postOrigin: '',
     mediaFiles: [], // URI or Base64 Encoded
     videoThumbnail: '',
     videoURL: '',
     user: 'Sean',
-    comments: [],
-    favourites: 0,
   }
-
 
   ionViewDidLoad() {
     this.storage.get(MEDIA_FILES_KEY).then(res => {
@@ -91,20 +83,20 @@ export class PostModalPage {
     }, (err) => { });
   }
    
-  submitPost() {
+  submitComment() {
     this.loadingCtrl.create({
       content: 'Please wait...',
       duration: 2000,
       dismissOnPageChange: true
     }).present();
-    this.newPostDetails.mediaFiles = this.takenPhotos;
-    this.newPostDetails.videoURL = this.videoURL;
-    this.newPostDetails.videoThumbnail = this.videoThumbnail;
-    this.postService.posts.unshift(this.newPostDetails);
+    this.newCommentDetails.mediaFiles = this.takenPhotos;
+    this.newCommentDetails.videoURL = this.videoURL;
+    this.newCommentDetails.videoThumbnail = this.videoThumbnail;
+    this.groupService.currentSelectedPost.comments.unshift(this.newCommentDetails);
     this.groupService.subscribedGroups.forEach(element => {
-      if(element.groupName === this.newPostDetails.postOrigin){
-        element.posts.unshift(this.newPostDetails);
-      }
+      // if(element.groupName === this.newCommentDetails.postOrigin){
+      //   element.posts.unshift(this.newCommentDetails);
+      // }
     });
 
     this.viewCtrl.dismiss();
@@ -181,8 +173,5 @@ export class PostModalPage {
     this.viewCtrl.dismiss();
   }
 
-  radioChecked(selectedRadioButtonValue: string) {
-    this.newPostDetails.postOrigin = selectedRadioButtonValue;
-}
 
 }

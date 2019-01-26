@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { PostService } from '../../../app/services/post.service';
 import { VideoOptions, VideoPlayer } from '@ionic-native/video-player';
+import { CommentModalPage } from '../comment-modal/comment-modal';
+import { GroupService } from '../../../app/services/group.service';
 
 @IonicPage()
 @Component({
@@ -15,7 +17,9 @@ export class SelectedPostModalPage {
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public postService: PostService,
+              public groupService: GroupService,
               private videoPlayer: VideoPlayer,
+              public modalController: ModalController
             ) {
   }
 
@@ -38,5 +42,10 @@ export class SelectedPostModalPage {
         console.log(e);
       }
     }
+    
+  openCommentModal() {
+    let leaveCommentModal = this.modalController.create(CommentModalPage);
+    leaveCommentModal.present();
+  }
   }
 

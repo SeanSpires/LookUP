@@ -1,17 +1,4 @@
-page-home {
-    #uploadBtn{
-        letter-spacing: 2px;
-        border-radius: 2px;
-    }
-
-    .contentBack {
-        background-color: rgb(247, 247, 247)
-    }  
-    
-    .swiper-slide img {
-       width: 100%;
-       max-height: 350px;
-    }
+page-comment-modal {
 
     .list-header-md {
         border-top: none;
@@ -24,6 +11,4 @@ page-home {
     .list-md {
         border-bottom: 2px rgb(235, 235, 237) solid 
     }
-
-    
 }

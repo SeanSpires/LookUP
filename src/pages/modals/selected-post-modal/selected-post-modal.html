@@ -1,7 +1,7 @@
 
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>{{postService.currentSelectedPost.postOrigin}}</ion-title>
+    <ion-title>{{groupService.currentSelectedPost.postOrigin}}</ion-title>
     <ion-buttons start>
       <button ion-button (click)="exitSelectedPostModal()">Close</button>
     </ion-buttons>
@@ -13,39 +13,37 @@
     <ion-card>
         <ion-item>
           <ion-avatar item-start>
-            <img src={{postService.currentSelectedPost.avatar}}>
+            <img src={{groupService.currentSelectedPost.avatar}}>
           </ion-avatar>
-          <h2>{{postService.currentSelectedPost.user}}</h2>
-          <p>{{postService.currentSelectedPost.postOrigin}}
+          <h2>{{groupService.currentSelectedPost.user}}</h2>
+          <p>{{groupService.currentSelectedPost.postOrigin}}
             
           </p>
         </ion-item>
   
         <ion-slides pager>
-            <ion-slide *ngFor="let file of postService.currentSelectedPost.mediaFiles">
+            <ion-slide *ngFor="let file of groupService.currentSelectedPost.mediaFiles">
                 <img src={{file}} class="slide-image">
             </ion-slide>
             <ion-slide 
-            *ngIf="!(!postService.currentSelectedPost.videoThumbnail ||
-                   0 === postService.currentSelectedPost.videoThumbnail.length)"
-                   (click)="playVideo(postService.currentSelectedPost.videoURL)"
+            *ngIf="!(!groupService.currentSelectedPost.videoThumbnail ||
+                   0 === groupService.currentSelectedPost.videoThumbnail.length)"
+                   (click)="playVideo(groupService.currentSelectedPost.videoURL)"
                    >
-              <img src={{postService.currentSelectedPost.videoThumbnail}} class="slide-image"> 
+              <img src={{groupService.currentSelectedPost.videoThumbnail}} class="slide-image"> 
           </ion-slide>
         </ion-slides>
 
         <ion-card-content>
-          <p>{{postService.currentSelectedPost.desc}}</p>
+          <p>{{groupService.currentSelectedPost.desc}}</p>
           <ion-list>
-              <p id="commentLabel">
-                  Comments
-                </p>
-              <!-- <ion-item> -->
-              <ion-input placeholder="Add Comment"></ion-input>
-            <!-- </ion-item> -->
+            <p id="commentLabel">
+              Comments
+            </p>
+            <button ion-button color="secondary" full (click)="openCommentModal()">Add Comment</button>
           </ion-list>
         </ion-card-content>
-        <ion-card *ngFor="let comment of postService.currentSelectedPost.comments">
+        <ion-card *ngFor="let comment of groupService.currentSelectedPost.comments">
             <ion-item>
               <ion-avatar item-start>
                 <img src={{comment.avatar}}>

@@ -9,7 +9,7 @@ export interface GroupInterface {
     isPrivate: boolean;
     groupPassword: string;
     selectedGroupTags: string[];
-    posts: PostInterface[];
+    posts: any[];
     
 
 }

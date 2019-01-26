@@ -15,7 +15,7 @@
       [showCancelButton]="shouldShowCancel"
      >
     </ion-searchbar>
-      <button ion-button full id="uploadBtn">ASK SOMETHING</button>
+      <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
       
           <ion-card (click)="setCurrentSelectedPost(post)" *ngFor="let post of groupService.currentSelectedGroup.posts">
             <ion-item>

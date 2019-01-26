@@ -32,6 +32,7 @@ import { Media } from '@ionic-native/media';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { IonicStorageModule } from '@ionic/storage';
 import { VideoEditor } from '@ionic-native/video-editor';
+import { CommentModalPage } from '../pages/modals/comment-modal/comment-modal';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { VideoEditor } from '@ionic-native/video-editor';
     TabsPage,
     SelectedPostModalPage,
     SelectedGroupModalPage,
+    CommentModalPage,
     ImagenBdPipe,
   ],
   imports: [
@@ -74,6 +76,7 @@ import { VideoEditor } from '@ionic-native/video-editor';
     TabsPage,
     SelectedPostModalPage,
     SelectedGroupModalPage,
+    CommentModalPage
     
   ],
   providers: [

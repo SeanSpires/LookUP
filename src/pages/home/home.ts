@@ -4,6 +4,7 @@ import { PostModalPage } from '../modals/post-modal/post-modal';
 import { PostService } from '../../app/services/post.service';
 import { PostInterface } from '../../app/interfaces/Post';
 import { SelectedPostModalPage } from '../modals/selected-post-modal/selected-post-modal';
+import { GroupService } from '../../app/services/group.service';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class HomePage  {
 
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
-              public postService: PostService) {
+              public postService: PostService,
+              public groupService: GroupService) {
               
   }
 
@@ -24,7 +26,8 @@ export class HomePage  {
   }
 
   public setCurrentSelectedPost (selectedPost: PostInterface) {
-    this.postService.currentSelectedPost = selectedPost;
+    // this.postService.currentSelectedPost = selectedPost;
+    this.groupService.currentSelectedPost = selectedPost;
     this.openSelectedPostModal();
   }
 
