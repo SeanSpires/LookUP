@@ -5,6 +5,7 @@ import { PostService } from '../../app/services/post.service';
 import { PostInterface } from '../../app/interfaces/Post';
 import { SelectedPostModalPage } from '../modals/selected-post-modal/selected-post-modal';
 import { GroupService } from '../../app/services/group.service';
+import Axios from 'axios';
 
 
 @Component({
@@ -12,7 +13,8 @@ import { GroupService } from '../../app/services/group.service';
   templateUrl: 'home.html'
 })
 export class HomePage  {
-
+  lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
+  audioURI: any;
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
               public postService: PostService,
@@ -34,6 +36,18 @@ export class HomePage  {
   public openSelectedPostModal() {
     let mySelectedPostModal = this.modalController.create(SelectedPostModalPage);
     mySelectedPostModal.present();
+  }
+
+  playAudio(description) {
+    console.log(description);
+    Axios.post(this.lookUpApiUrl + '/api/texttospeech', {
+      Text: description
+    }).then(uri =>{ 
+      this.audioURI = uri
+      const audio = new Audio(this.audioURI.data);
+      console.log(this.audioURI);
+      audio.play();
+    });
   }
 }
 

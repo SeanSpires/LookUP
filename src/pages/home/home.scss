@@ -12,6 +12,10 @@ page-home {
         height: 30px;
     }
 
+    #headerGroupName {
+        background-color: none !important;
+    }
+
     .contentBack {
         background-color: rgb(247, 247, 247)
     }  
@@ -30,7 +34,11 @@ page-home {
     }
 
     .list-md {
-        border-bottom: 2px rgb(235, 235, 237) solid 
+        border-bottom: 2px rgb(235, 235, 237) solid;
+    }
+
+    .item-md {
+        background: none;
     }
 
     

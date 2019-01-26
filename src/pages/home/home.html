@@ -13,51 +13,53 @@
     <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
       <div *ngFor="let group of groupService.subscribedGroups">
         <div>
-            
-            <ion-list-header>{{group.groupName}}
+            <ion-list-header id='headerGroupName'>{{group.groupName}}
             <img src={{group.groupPhoto}} id='groupHomePageDisplay'>
             </ion-list-header>
         </div>
-        <ion-card (click)="setCurrentSelectedPost(post)" *ngFor="let post of group.posts">
-              <ion-item>
-                  <ion-avatar item-start>
-                    <img src={{post.avatar}}>
-                  </ion-avatar>
-                  <h2>{{post.user}}</h2>
-                  <p>{{post.postOrigin}}</p>
-                </ion-item>
-          
-                <ion-slides pager>
-                    <ion-slide *ngFor="let file of post.mediaFiles">
-                        <img src={{file}} class="slide-image">
-                    </ion-slide>
-                    <ion-slide *ngIf="!(!post.videoThumbnail || 0 === post.videoThumbnail.length)">
-                        <img src={{post.videoThumbnail}} class="slide-image"> 
-                    </ion-slide>
-                  </ion-slides>
-                <ion-card-content>
-                  <p>{{post.desc}}</p>
-                </ion-card-content>
-              
-                <ion-row>
-                  <ion-col>
-                    <button ion-button color="primary" clear small icon-start>
-                      <ion-icon name='star'></ion-icon>
-                      {{post.favourites}} Favs
-                    </button>
-                  </ion-col>
-                  <ion-col>
-                    <button ion-button color="primary" clear small icon-start>
-                      <ion-icon name='text'></ion-icon>
-                      {{post.comments.length}} Comments
-                    </button>
-                  </ion-col>
-                  <ion-col align-self-center text-center>
-                    <ion-note>
-                      {{post.date}}
-                    </ion-note>
-                  </ion-col>
-                </ion-row>
+        <ion-card *ngFor="let post of group.posts">
+          <div (click)="setCurrentSelectedPost(post)">
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src={{post.avatar}}>
+                </ion-avatar>
+                <h2>{{post.user}}</h2>
+                <p>{{post.postOrigin}}</p>
+            </ion-item>
+            <ion-slides pager>
+                <ion-slide *ngFor="let file of post.mediaFiles">
+                    <img src={{file}} class="slide-image">
+                </ion-slide>
+                <ion-slide *ngIf="!(!post.videoThumbnail || 0 === post.videoThumbnail.length)">
+                    <img src={{post.videoThumbnail}} class="slide-image"> 
+                </ion-slide>
+            </ion-slides>
+          </div>
+          <ion-card-content>
+            <p>{{post.desc}}</p>
+            <div (click)='playAudio(post.desc)'>
+                <img src="../../../assets/imgs/volume.png" style="width:30px">
+            </div>
+          </ion-card-content>
+            <ion-row>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                  <ion-icon name='star'></ion-icon>
+                  {{post.favourites}} Favs
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" clear small icon-start (click)="setCurrentSelectedPost(post)">
+                  <ion-icon name='text'></ion-icon>
+                  {{post.comments.length}} Comments
+                </button>
+              </ion-col>
+              <ion-col align-self-center text-center>
+                <ion-note>
+                  {{post.date}}
+                </ion-note>
+              </ion-col>
+            </ion-row>
           </ion-card>     
         </div>       
 </ion-content>

@@ -4,6 +4,7 @@ import { PostService } from '../../../app/services/post.service';
 import { VideoOptions, VideoPlayer } from '@ionic-native/video-player';
 import { CommentModalPage } from '../comment-modal/comment-modal';
 import { GroupService } from '../../../app/services/group.service';
+import Axios from 'axios';
 
 @IonicPage()
 @Component({
@@ -12,14 +13,15 @@ import { GroupService } from '../../../app/services/group.service';
 })
 export class SelectedPostModalPage {
   videoOptions: VideoOptions
-
+  lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
+  audioURI: any;
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public postService: PostService,
               public groupService: GroupService,
               private videoPlayer: VideoPlayer,
-              public modalController: ModalController
+              public modalController: ModalController,
             ) {
   }
 
@@ -47,5 +49,17 @@ export class SelectedPostModalPage {
     let leaveCommentModal = this.modalController.create(CommentModalPage);
     leaveCommentModal.present();
   }
+
+  playAudio(description) {
+    console.log(description);
+    Axios.post(this.lookUpApiUrl + '/api/texttospeech', {
+      Text: description
+    }).then(uri =>{ 
+      this.audioURI = uri
+      const audio = new Audio(this.audioURI.data);
+      console.log(this.audioURI);
+      audio.play();
+    });
   }
+}
 
