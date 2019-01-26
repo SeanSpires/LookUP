@@ -4,6 +4,14 @@ page-home {
         border-radius: 2px;
     }
 
+    #groupHomePageDisplay {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 30px;
+        margin-bottom: -4px;
+        height: 30px;
+    }
+
     .contentBack {
         background-color: rgb(247, 247, 247)
     }  

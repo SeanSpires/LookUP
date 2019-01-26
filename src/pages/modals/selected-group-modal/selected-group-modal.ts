@@ -43,7 +43,7 @@ export class SelectedGroupModalPage {
   }
 
   public setCurrentSelectedPost (selectedPost) {
-    this.postService.currentSelectedPost = selectedPost;
+    this.groupService.currentSelectedPost = selectedPost;
     this.openSelectedPostModal();
   }
 

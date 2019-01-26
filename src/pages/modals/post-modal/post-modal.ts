@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, ViewController, LoadingController, normalizeURL } from 'ionic-angular';
+import { Component, ViewChild, Input } from '@angular/core';
+import { IonicPage, ViewController, LoadingController, normalizeURL, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { PostService } from '../../../app/services/post.service';
@@ -38,6 +38,7 @@ export class PostModalPage {
   thumbnail: string;
    
   constructor(
+    public params: NavParams,
     public viewCtrl: ViewController, 
     public loadingCtrl: LoadingController, 
     private imagePicker: ImagePicker,
@@ -85,7 +86,6 @@ export class PostModalPage {
       let filename = results[i].substring(results[i].lastIndexOf('/')+1);
       let path =  results[i].substring(0,results[i].lastIndexOf('/')+1);   
       this.file.readAsDataURL(path, filename).then(res=> this.takenPhotos.push(res));
-        // this.takenPhotos.push(results[i]);
           console.log('Image URI: ' + results[i]);
       }
     }, (err) => { });
@@ -101,6 +101,7 @@ export class PostModalPage {
     this.newPostDetails.videoURL = this.videoURL;
     this.newPostDetails.videoThumbnail = this.videoThumbnail;
     this.postService.posts.unshift(this.newPostDetails);
+
     this.groupService.subscribedGroups.forEach(element => {
       if(element.groupName === this.newPostDetails.postOrigin){
         element.posts.unshift(this.newPostDetails);

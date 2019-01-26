@@ -12,9 +12,12 @@
 <ion-content padding class="contentBack">
     <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
       <div *ngFor="let group of groupService.subscribedGroups">
-          <ion-list-header>
-              {{group.groupName}}
+        <div>
+            
+            <ion-list-header>{{group.groupName}}
+            <img src={{group.groupPhoto}} id='groupHomePageDisplay'>
             </ion-list-header>
+        </div>
         <ion-card (click)="setCurrentSelectedPost(post)" *ngFor="let post of group.posts">
               <ion-item>
                   <ion-avatar item-start>
@@ -33,7 +36,6 @@
                     </ion-slide>
                   </ion-slides>
                 <ion-card-content>
-                  <!-- <p>{{post.videoThumbnail}}</p> -->
                   <p>{{post.desc}}</p>
                 </ion-card-content>
               

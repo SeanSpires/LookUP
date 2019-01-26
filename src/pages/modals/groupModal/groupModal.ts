@@ -65,21 +65,21 @@ export class GroupModalPage {
   }
 
   submitGroup() {
-    const myFormData = new FormData();
-    myFormData.append('file', this.imageData);
-    axios.post(this.lookUpApiUrl + '/api/group/mediaUpload', myFormData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }).then(
-      uri => axios.post(this.lookUpApiUrl + '/api/group/create', {
-        "groupName": this.newGroupDetails.groupName,
-        "isPrivate": this.newGroupDetails.isPrivate,
-        "password": this.newGroupDetails.groupPassword,
-        "groupPhoto": uri,
-        "ownerId": "1"
-      }).then(res => console.log(res))
-    );
+    // const myFormData = new FormData();
+    // myFormData.append('file', this.imageData);
+    // axios.post(this.lookUpApiUrl + '/api/group/mediaUpload', myFormData, {
+    //   headers: {
+    //     'Content-Type': 'multipart/form-data'
+    //   }
+    // }).then(
+    //   uri => axios.post(this.lookUpApiUrl + '/api/group/create', {
+    //     "groupName": this.newGroupDetails.groupName,
+    //     "isPrivate": this.newGroupDetails.isPrivate,
+    //     "password": this.newGroupDetails.groupPassword,
+    //     "groupPhoto": uri,
+    //     "ownerId": "1"
+    //   }).then(res => console.log(res))
+    // );
 
     
 
