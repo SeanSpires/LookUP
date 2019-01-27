@@ -25,7 +25,6 @@ export class GroupService {
         groupPhoto: "../assets/imgs/cartoonPiano.jpg",
         isPrivate: false,
         groupPassword: '',
-        selectedGroupTags: ["Music","Other"],
         posts: [{
           desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
           id: 1,
@@ -41,14 +40,21 @@ export class GroupService {
             description: "You're confusing the 3rd and 4th finger placements",
             avatar: "../assets/imgs/rohaan.jpg",
             mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
-            user: "Rohaan Mistry"
+            user: "Rohaan Mistry",
+            videoThumbnail: '',
+            videoURL: ''
+            
           },
           {
             id: 2,
             description: "Here look at my fingers",
             avatar: "../assets/imgs/anime.jpg",
             mediaFiles: ["../assets/imgs/sonata.png"],
-            user: "Hansa Asrani"                
+            user: "Hansa Asrani",
+            videoThumbnail: '',
+            videoURL: ''
+            
+                          
           },
           {
             id: 3,
@@ -56,7 +62,10 @@ export class GroupService {
                          "fingers are properly straight so you can press down with the correct force.",
             avatar: "../assets/imgs/cartoonSarah.png",
             mediaFiles: undefined,
-            user: "Sarah Jane"                
+            user: "Sarah Jane",
+            videoThumbnail: '',
+            videoURL: ''
+                            
           }
         
         ],
@@ -70,7 +79,6 @@ export class GroupService {
         groupPhoto: "../assets/imgs/tennisC.jpg",
         isPrivate: false,
         groupPassword: '',
-        selectedGroupTags: ["Music","Other"],
         posts: [{
           desc: "Hey guys could someone please confirm that my tennis serve is correct, TIA",
           id: 2,
@@ -86,21 +94,30 @@ export class GroupService {
             description: "Keep your elbow slightly more raised when beggining the serve",
             avatar: "../assets/imgs/andrew.jpg",
             mediaFiles: [],
-            user: "Andrew Hu"
+            user: "Andrew Hu",
+            videoThumbnail: '',
+            videoURL: ''
+            
           },
           {
             id: 2,
             description: "Here look at my form, as you can see I've got my elbow very high in the beginning",
             avatar: "../assets/imgs/samuel.jpg",
             mediaFiles: ["../assets/imgs/tennisServe2.png"],
-            user: "Jordan Pan"                
+            user: "Jordan Pan",
+            videoThumbnail: '',
+            videoURL: ''
+                            
           },
           {
             id: 3,
             description: "To learn to serve, it may be profitable to take the elements of the kinetic chain in reverse. Start with the motion of the shoulder and arm, and as you progress, add additional elements until you reach the ground.",
             avatar: "../assets/imgs/cartoonSarah.png",
             mediaFiles: [],
-            user: "Rachel Michelle"                
+            user: "Rachel Michelle",
+            videoThumbnail: '',
+            videoURL: ''
+                            
           }
         
         ],
@@ -114,7 +131,6 @@ export class GroupService {
         groupPhoto: "../assets/imgs/wheelC.jpg",
         isPrivate: false,
         groupPassword: '',
-        selectedGroupTags: ["Music","Other"],
         posts: [{
           desc: "Should my car be making this noise? it only does this in the morning",
           id: 3,
@@ -130,21 +146,30 @@ export class GroupService {
             description: "Yeah, your car model commonly will make that noise in the morning don't worry about it!",
             avatar: "../assets/imgs/bharat.jpg",
             mediaFiles: [],
-            user: "Bharat Rasali"
+            user: "Bharat Rasali",
+            videoThumbnail: '',
+            videoURL: ''
+            
           },
           {
             id: 2,
             description: "Don't worry mine makes the same noise too haha, listen to mine :)",
             avatar: "../assets/imgs/anime.jpg",
             mediaFiles: ["../assets/imgs/jeep.png"],
-            user: "Hansa Asrani"                
+            user: "Hansa Asrani",
+            videoThumbnail: '',
+            videoURL: ''
+                            
           },
           {
             id: 3,
             description: "If this clicking occurs when turning or accelerating, and appears to be coming from the front end, and your car is a front-wheel drive model, I’d suggest you may have a damaged CV (Constant Velocity) joint. Your car has likely one, possibly two each side.",
             avatar: "../assets/imgs/rohaan.jpg",
             mediaFiles: [],
-            user: "Rohaan Mistry"                
+            user: "Rohaan Mistry",
+            videoThumbnail: '',
+            videoURL: ''
+                            
           },
         ],
           favourites: 22
@@ -159,7 +184,6 @@ export class GroupService {
         groupPhoto: "../assets/imgs/guitar.jpg",
         isPrivate: false,
         groupPassword: '',
-        selectedGroupTags: ["Music","Other"],
         posts: []
     },
     
@@ -169,7 +193,6 @@ export class GroupService {
         groupPhoto: "../assets/imgs/steak.jpg",
         isPrivate: false,
         groupPassword: '',
-        selectedGroupTags: ["Music","Other"],
         posts: []
 
     },    
@@ -180,7 +203,6 @@ export class GroupService {
         groupPhoto: "../assets/imgs/PC.png",
         isPrivate: false,
         groupPassword: '',
-        selectedGroupTags: ["Music","Other"],
         posts: []
     },
     {
@@ -189,7 +211,6 @@ export class GroupService {
       groupPhoto: "../assets/imgs/makeup.png",
       isPrivate: false,
       groupPassword: '',
-      selectedGroupTags: ["Music","Other"],
       posts: []
     },
     {
@@ -198,23 +219,9 @@ export class GroupService {
       groupPhoto: "../assets/imgs/plug.jpg",
       isPrivate: false,
       groupPassword: '',
-      selectedGroupTags: ["Music","Other"],
       posts: []
   }        
    ]
-
-  //  populatePosts() {
-  //   let postArray = [];
-  //   this.postService.posts.forEach(element => {
-  //     console.log(element)
-  //     if (element.postOrigin === 'Grade 5 Piano') {
-  //       postArray.push(element);
-  //     }
-  //   })
-  //   console.log('-------------------------------------------------------')
-  //   console.log(postArray)
-  //   return postArray;
-  //  }
 
   populatePosts() {
     this.subscribedGroups.forEach(element => {

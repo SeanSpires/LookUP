@@ -8,8 +8,5 @@ export interface GroupInterface {
     groupPhoto: string;
     isPrivate: boolean;
     groupPassword: string;
-    selectedGroupTags: string[];
-    posts: any[];
-    
-
+    posts: PostInterface[];
 }

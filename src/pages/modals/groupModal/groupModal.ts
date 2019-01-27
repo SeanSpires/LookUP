@@ -47,7 +47,6 @@ export class GroupModalPage {
     groupPhoto: '',
     isPrivate: false,
     groupPassword: '',
-    selectedGroupTags: ["Other"],
     posts: []
   }
 
