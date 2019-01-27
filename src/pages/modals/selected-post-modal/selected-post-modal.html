@@ -30,7 +30,10 @@
                    0 === groupService.currentSelectedPost.videoThumbnail.length)"
                    (click)="playVideo(groupService.currentSelectedPost.videoURL)"
                    >
-              <img src={{groupService.currentSelectedPost.videoThumbnail}} class="slide-image"> 
+              <img src={{groupService.currentSelectedPost.videoThumbnail}} class="slide-image">
+              <ion-fab middle middle>
+                  <ion-icon name="play" class="playButton"></ion-icon>
+              </ion-fab> 
           </ion-slide>
         </ion-slides>
 
@@ -57,7 +60,10 @@
                 <ion-slide *ngIf="!(!comment.videoThumbnail || 0 === comment.videoThumbnail.length)"
                             (click)="playVideo(comment.videoURL)"      
                 >
-                    <img src={{comment.videoThumbnail}} class="slide-image"> 
+                    <img src={{comment.videoThumbnail}} class="slide-image">
+                    <ion-fab middle middle>
+                        <ion-icon name="play" class="playButton"></ion-icon>
+                    </ion-fab>
                 </ion-slide>
               </ion-slides>
             <ion-card-content>

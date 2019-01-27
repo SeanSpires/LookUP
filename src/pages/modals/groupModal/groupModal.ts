@@ -96,12 +96,6 @@ export class GroupModalPage {
     console.log(this.newGroupDetails);
   }
 
-  getGroup() {
-    let data:any = [];
-    axios.get(this.lookUpApiUrl + '/api/group/Piano').then(res => 
-      data = res);
-  }
-
   exitGroupModal() {
     this.viewCtrl.dismiss();
   }

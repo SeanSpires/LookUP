@@ -31,7 +31,10 @@
                     <img src={{file}} class="slide-image">
                 </ion-slide>
                 <ion-slide *ngIf="!(!post.videoThumbnail || 0 === post.videoThumbnail.length)">
-                    <img src={{post.videoThumbnail}} class="slide-image"> 
+                    <img src={{post.videoThumbnail}} class="slide-image">
+                    <ion-fab middle middle>
+                        <ion-icon name="play" class="playButton"></ion-icon>
+                    </ion-fab> 
                 </ion-slide>
               </ion-slides>
     

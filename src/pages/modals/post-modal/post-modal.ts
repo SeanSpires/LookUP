@@ -10,6 +10,7 @@ import { MediaCapture, CaptureVideoOptions, MediaFile, CaptureError } from '@ion
 import { Storage } from '@ionic/storage';
 import { VideoPlayer, VideoOptions } from '@ionic-native/video-player';
 import { VideoEditor, CreateThumbnailOptions } from '@ionic-native/video-editor';
+import { GroupService } from '../../../app/services/group.service';
 
 const MEDIA_FILES_KEY = 'mediaFiles';
 
@@ -47,6 +48,7 @@ export class PostModalPage {
     private media: Media,
     private videoPlayer: VideoPlayer,
     private videoEditor: VideoEditor,
+    public groupService: GroupService
     
   ) {    
   }
@@ -96,7 +98,11 @@ export class PostModalPage {
     this.newPostDetails.mediaFiles = this.takenPhotos;
     this.newPostDetails.videoURL = this.videoURL;
     this.newPostDetails.videoThumbnail = this.videoThumbnail;
-    this.postService.posts.unshift(this.newPostDetails);
+    this.groupService.subscribedGroups.forEach(element => {
+      if(element.groupName === this.newPostDetails.postOrigin){
+        element.posts.unshift(this.newPostDetails);
+      }
+    });
     this.viewCtrl.dismiss();
   }
 
