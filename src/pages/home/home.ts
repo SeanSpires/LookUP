@@ -6,6 +6,8 @@ import { PostInterface } from '../../app/interfaces/Post';
 import { SelectedPostModalPage } from '../modals/selected-post-modal/selected-post-modal';
 import { GroupService } from '../../app/services/group.service';
 import Axios from 'axios';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+
 
 
 @Component({
@@ -15,10 +17,12 @@ import Axios from 'axios';
 export class HomePage  {
   lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
   audioURI: any;
+  speechArray: string[] = [];
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
               public postService: PostService,
-              public groupService: GroupService) {
+              public groupService: GroupService,
+              private speech: SpeechRecognition) {
               
   }
 
@@ -37,6 +41,29 @@ export class HomePage  {
     let mySelectedPostModal = this.modalController.create(SelectedPostModalPage);
     mySelectedPostModal.present();
   }
+
+  async getPermission():Promise<void> {
+    try {
+      const permission = await this.speech.requestPermission();
+      console.log(permission);
+      return permission;
+    }
+    catch(e) {
+      console.log(e)
+    }
+  }
+
+  listenForSpeech():void {
+    this.speech.hasPermission()
+    .then((hasPermission: boolean) => {
+      if (!hasPermission) {
+        this.speech.requestPermission()
+      }
+      this.speech.startListening().subscribe(data => this.speechArray = data, error => console.log(error));
+    })
+  }
+
+
 
   playAudio(description) {
     console.log(description);
