@@ -13,12 +13,12 @@
           <ion-icon name="mic"></ion-icon>
         </button>
     </ion-fab>
-    <button ion-button full (click)="listenForSpeech()">Record Audio</button>
+    <!-- <button ion-button full (click)="listenForSpeech()">Record Audio</button> -->
     <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
     <ion-card>
-      <ion-card-content>
-        <p>
-          {{answer}}
+      <ion-card-content *ngIf="answer !== undefined">
+        <p >
+          {{answer.data.text}}
         </p>
       </ion-card-content>
     </ion-card>

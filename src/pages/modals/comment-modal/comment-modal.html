@@ -23,6 +23,7 @@
     <ion-list>
       <ion-list-header>
           Comment Details
+          <ion-icon name="mic" id="micIcon"></ion-icon>
         </ion-list-header>
       <ion-item>
           <ion-input placeholder="Description" [(ngModel)]="newCommentDetails.description" ></ion-input>
@@ -31,7 +32,7 @@
       <p>
         {{videoSource}}
       </p>
-      <button (click)="play()" full ion-button>click to play</button>
+      <!-- <button (click)="play()" full ion-button>click to play</button> -->
       <!-- <video #myvideo controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" width="300" height="300" class="videoPlayer"></video> -->
     <button ion-button color="secondary" full (click)="submitComment()" id="submitBut">Submit Post</button>  
 </ion-content>
