@@ -6,17 +6,19 @@
  >
 </ion-searchbar>
 </ion-navbar>
-  
 </ion-header>
-
 <ion-content padding class="contentBack">
+    <ion-fab bottom right slot="fixed" (click)="listenForSpeech()">
+        <button ion-fab color="secondary">
+          <ion-icon name="mic"></ion-icon>
+        </button>
+    </ion-fab>
     <button ion-button full (click)="listenForSpeech()">Record Audio</button>
     <button ion-button full id="uploadBtn" (click)="presentModal()">ASK SOMETHING</button>
-
     <ion-card>
-      <ion-card-content *ngFor="let speech of speechArray">
+      <ion-card-content>
         <p>
-          {{speech}}
+          {{answer}}
         </p>
       </ion-card-content>
     </ion-card>

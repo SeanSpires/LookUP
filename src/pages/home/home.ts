@@ -7,8 +7,7 @@ import { SelectedPostModalPage } from '../modals/selected-post-modal/selected-po
 import { GroupService } from '../../app/services/group.service';
 import Axios from 'axios';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
-
-
+import { AnswerInterface } from '../../app/interfaces/Answer';
 
 @Component({
   selector: 'page-home',
@@ -18,6 +17,7 @@ export class HomePage  {
   lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
   audioURI: any;
   speechArray: string[] = [];
+  answer: any;
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
               public postService: PostService,
@@ -53,17 +53,27 @@ export class HomePage  {
     }
   }
 
-  listenForSpeech():void {
+  listenForSpeech() {
     this.speech.hasPermission()
     .then((hasPermission: boolean) => {
       if (!hasPermission) {
         this.speech.requestPermission()
       }
-      this.speech.startListening().subscribe(data => this.speechArray = data, error => console.log(error));
-    })
+        this.speech.startListening().subscribe(data =>this.generateAudio(data), error => console.log(error));
+    });
   }
 
-
+  generateAudio(data) {
+    this.speechArray = data
+    Axios.post(this.lookUpApiUrl + '/api/qna', {
+      Text: data[0]
+    }).then(answer => {
+      this.answer = answer;
+      console.log(this.answer);
+      const audio = new Audio(this.answer.data.audio)
+      audio.play();
+    })
+  }
 
   playAudio(description) {
     console.log(description);

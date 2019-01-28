@@ -35,6 +35,7 @@ import { CommentModalPage } from '../pages/modals/comment-modal/comment-modal';
 import { SelectedGroupModalPageModule } from '../pages/modals/selected-group-modal/selected-group-modal.module';
 import { CreatePostOnSelectedGroupModalPage } from '../pages/modals/create-post-on-selected-group-modal/create-post-on-selected-group-modal';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
     SelectedPostModalPage,
     SelectedGroupModalPage,
     CommentModalPage,
-    CreatePostOnSelectedGroupModalPage
+    CreatePostOnSelectedGroupModalPage,
   ],
   imports: [
     BrowserModule,

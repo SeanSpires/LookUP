@@ -21,4 +21,8 @@ export class TabsPage {
   constructor() {
 
   }
+
+  public test(){
+    console.log('assisant pressed');
+  }
 }
