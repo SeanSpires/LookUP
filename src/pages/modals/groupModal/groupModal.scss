@@ -26,4 +26,14 @@ page-modal {
     .list-md {
         border-bottom: 2px rgb(235, 235, 237) solid 
     }
+
+    .button-md {
+        text-transform: none;
+        letter-spacing: 1px;
+    }
+
+    #groupPhoto {
+        max-height: 200px;
+        border-radius: 100%;
+    }
 }

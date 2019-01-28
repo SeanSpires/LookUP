@@ -13,6 +13,7 @@
       <ion-list>
           <ion-list-header>
               Group Details
+              <ion-icon name="mic" id="micIcon"></ion-icon>
             </ion-list-header>
           <ion-item>
               <ion-input placeholder="Group Name" [(ngModel)]="newGroupDetails.groupName"></ion-input>
@@ -20,19 +21,20 @@
           <ion-item>
             <ion-input placeholder="Group Description" [(ngModel)]="newGroupDetails.groupDescription"></ion-input>
           </ion-item>     
-          <ion-item>
-            <button ion-button (click)="takePhoto()" full>Take a Group Photo</button>
-            <p>
-              <img src="{{ myPhoto }}">
-            </p>
-            <p>ImageData: {{imageData}}</p>
-            <p>Filename: {{filename}}</p>
-            <p>Path: {{path}}</p>
-          </ion-item>  
-          <ion-item>
-            <button ion-button (click)="openImageGallery()" full>Select Group Photo</button>            
-          </ion-item>
         </ion-list>
+        <div style="text-align:center; margin-top:40px">
+            <button ion-button (click)="takePhoto()"><ion-icon name="camera" style="margin-right: 3px"></ion-icon>Take Photo</button>
+            <button ion-button (click)="openImageGallery()"><ion-icon name="image" style="margin-right: 3px"></ion-icon>Select Photo</button>
+        </div>
+                   
+        <!-- <p *ngIf="myPhoto !== undefined"> -->
+        <div style="text-align: center; margin-top: 20px;" *ngIf="myPhoto !== undefined">
+          <img src="{{ myPhoto }}" id="groupPhoto">
+          <!-- <img src="../../../assets/imgs/sean.jpg" id="groupPhoto"> -->
+        </div>
+        <!-- <p>ImageData: {{imageData}}</p>
+        <p>Filename: {{filename}}</p>
+        <p>Path: {{path}}</p> -->
         <ion-list radio-group >
             <ion-list-header id="privacyLabel">
               Privacy
@@ -44,7 +46,7 @@
             </ion-item>
           
             <ion-item>
-              <ion-label>Private ($4.99)</ion-label>
+              <ion-label>Private</ion-label>
               <ion-radio value="rust" (click)="togglePrivacy()"></ion-radio>
             </ion-item>
 

@@ -68,6 +68,10 @@ export class CommentModalPage {
     })
   }
 
+  exitCommentModal() {
+    this.viewCtrl.dismiss()
+  }
+
   openImageGallery() {
     const options: ImagePickerOptions = {
       maximumImagesCount: 5

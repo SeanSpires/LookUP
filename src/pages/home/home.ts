@@ -80,9 +80,9 @@ export class HomePage  {
     Axios.post(this.lookUpApiUrl + '/api/texttospeech', {
       Text: description
     }).then(uri =>{ 
+      console.log(uri.data);
       this.audioURI = uri
       const audio = new Audio(this.audioURI.data);
-      console.log(this.audioURI);
       audio.play();
     });
   }

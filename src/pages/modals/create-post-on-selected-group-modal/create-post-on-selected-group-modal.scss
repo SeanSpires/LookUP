@@ -16,10 +16,15 @@ page-create-post-on-selected-group-modal {
     }
 
     #micIcon {
-        border: 1px solid black;
-        border-radius: 100%;
-        padding: 5px;
-        background: #937edf;
-        color: white;
+        // border: 1px solid black;
+        // border-radius: 100%;
+        // padding: 5px;
+        // background: #937edf;
+        // color: white;
+    }
+
+    .button-md {
+        text-transform: none;
+        letter-spacing: 1px;
     }
 }
