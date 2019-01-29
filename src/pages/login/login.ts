@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { GroupService } from '../../app/services/group.service';
 import { GroupInterface } from '../../app/interfaces/Group';
@@ -21,9 +21,13 @@ export class LoginPage {
   lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";  
   groupFromCosmos: GroupInterface;
   groupArray: any[];
+  userName = 'sean';
+  password = 'password'
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public groupService: GroupService) {
+              public groupService: GroupService,
+              public loadingCtrl: LoadingController,
+              private alertCtrl: AlertController) {
   }
 
   // ionViewDidLoad() {
@@ -56,9 +60,36 @@ export class LoginPage {
   // }
 
   onGoToLogin(){
-    this.navCtrl.push(TabsPage);
+    console.log(this.userName);
+    console.log(this.password);
+
+
+
+      this.loadingCtrl.create({
+        content: 'Logging in...',
+        duration: 2000,
+        dismissOnPageChange: true
+      }).present();
+    if(this.userName !== 'sean' || this.password !== 'password'){
+     
+      this.presentAlert(this.alertCtrl)
+     
+    } else if (this.userName === 'sean' || this.password === 'password') {
+      this.navCtrl.push(TabsPage);
+    }
+  }  
+
+  loadingIndication() {
+
   }
-
-
-  
+  presentAlert(alertCtrl) {
+    setTimeout(function(){
+      let alert = alertCtrl.create({
+        title: 'Incorrect Credentials',
+        subTitle: 'check username/password',
+        buttons: ['Dismiss']
+      });
+      alert.present();
+    }, 1500);
+  }
 }

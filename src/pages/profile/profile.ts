@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
+import { LandingPage } from '../landing/landing';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the ProfilePage page.
@@ -22,7 +25,4 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
   }
 
-  onLogout() {
-    // this.navCtrl.push(LandingPage);
-  }
 }
