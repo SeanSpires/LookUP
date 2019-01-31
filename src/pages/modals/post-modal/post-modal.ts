@@ -25,7 +25,7 @@ export class PostModalPage {
   @ViewChild('myvideo') myVideo: any;
   videoURL: any;
   takenPhotos: any[] = [];
-  videoThumbnail: String;
+  videoThumbnail: String
   myPhoto: any;
   path: string;
   filename: string;
