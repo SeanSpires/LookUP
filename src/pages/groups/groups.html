@@ -42,13 +42,14 @@
         Your Groups
       </ion-list-header>
       <ion-item-sliding *ngFor= "let group of groupService.subscribedGroups"> 
-        <ion-item (click)="setCurrentSelectedGroup(group)">
-          <ion-avatar item-start>
+        <ion-item>
+          <ion-avatar item-start (click)="setCurrentSelectedGroup(group)">
             <img src={{group.groupPhoto}}>
           </ion-avatar>
-          <h2>{{group.groupName}}</h2>
+          <h2 (click)="setCurrentSelectedGroup(group)">{{group.groupName}}</h2>
+          <ion-icon name="remove" item-end (click)="unsubToGroup(group)" style="color:red"></ion-icon>
         </ion-item>
-        <ion-item-options>
+        <!-- <ion-item-options>
           <button ion-button color="primary" icon-start>
             <ion-icon name="text"></ion-icon>
             Text
@@ -57,7 +58,7 @@
             <ion-icon name="trash"></ion-icon>
             Trash
           </button>
-        </ion-item-options>
+        </ion-item-options> -->
       </ion-item-sliding>
     </ion-list>
   
@@ -72,9 +73,9 @@
             <img src={{group.groupPhoto}}>
           </ion-avatar>
           <h2 (click)="setCurrentSelectedGroup(group)">{{group.groupName}}</h2>
-          <ion-icon name="add" item-end (click)="subscribeToSuggestedGroup(group)"></ion-icon>
+          <ion-icon name="add" item-end (click)="subscribeToSuggestedGroup(group)" style="color:green"></ion-icon>
         </ion-item>
-        <ion-item-options>
+        <!-- <ion-item-options>
           <button ion-button color="light" icon-start>
             <ion-icon name="more"></ion-icon>
             More
@@ -87,7 +88,7 @@
             <ion-icon name="add"></ion-icon>
             Join
           </button>
-        </ion-item-options>
+        </ion-item-options> -->
       </ion-item-sliding>
       <ion-item>
         <p></p>

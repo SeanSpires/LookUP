@@ -58,11 +58,7 @@ export class GroupsPage {
     mySelectedPostModal.present();
   }
 
-  public subscribeToSuggestedGroup(groupToSubscribe: GroupInterface){
-    this.groupService.subscribedGroups.push(groupToSubscribe);
-    let suggestedGroupIndex = this.groupService.recommendedGroups.indexOf(groupToSubscribe);
-    let splicedValue = this.groupService.recommendedGroups.splice(suggestedGroupIndex,1);
-  }
+  
 
   public listenForSpeech():void {
     this.speech.hasPermission()
@@ -85,12 +81,18 @@ export class GroupsPage {
     })
   }
 
-  unsubToGroup(group) {
-    console.log(group)
-    // let groupIndex = this.groupService.subscribedGroups.indexOf(group.groupName);
-    // this.groupService.subscribedGroups.splice(groupIndex,1);
-    // this.groupService.recommendedGroups.unshift(group);
+  public unsubToGroup(group: GroupInterface) {
+    this.groupService.recommendedGroups.unshift(group);
+    let suggestedGroupIndex = this.groupService.subscribedGroups.indexOf(group);
+    let splicedValue = this.groupService.subscribedGroups.splice(suggestedGroupIndex,1);
+    
     };
+
+  public subscribeToSuggestedGroup(groupToSubscribe: GroupInterface){
+    this.groupService.subscribedGroups.push(groupToSubscribe);
+    let suggestedGroupIndex = this.groupService.recommendedGroups.indexOf(groupToSubscribe);
+    let splicedValue = this.groupService.recommendedGroups.splice(suggestedGroupIndex,1);
+  }
 }
 
 
