@@ -25,6 +25,17 @@ page-selected-post-modal {
     .contentBack {
         background-color: rgb(247, 247, 247)
     }
+    .button-md {
+        text-transform: none;
+        letter-spacing: 2px;
+    }
+
+    .label-md {
+        text-transform: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
     .swiper-slide img {
         width: 100%;
         max-height: 350px;

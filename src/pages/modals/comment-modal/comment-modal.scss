@@ -1,8 +1,12 @@
-page-comment-modal {
+page-comment-modal {     
+    #imageContainer {
+        margin-top: 10px;
+    }
 
     .list-header-md {
         border-top: none;
         border-bottom: 2px solid rgb(147, 126, 223);
+        background-color: rgb(247,247,247);
         color: black;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -11,4 +15,25 @@ page-comment-modal {
     .list-md {
         border-bottom: 2px rgb(235, 235, 237) solid 
     }
+
+    .label-md {
+        text-transform: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .button-md {
+        letter-spacing: 2px;
+        text-transform: none;
+    }
+
+    .playButton {
+        color: white;
+        border: 2px solid white;
+        border-radius: 100%;
+        text-align: center;
+        margin-top: 30px;
+        padding: 5px;
+        margin-left: 35px;
+    }  
 }

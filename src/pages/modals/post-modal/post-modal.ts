@@ -25,7 +25,7 @@ export class PostModalPage {
   @ViewChild('myvideo') myVideo: any;
   videoURL: any;
   takenPhotos: any[] = [];
-  videoThumbnail: String
+  videoThumbnail: string = '';
   myPhoto: any;
   path: string;
   filename: string;
@@ -171,6 +171,14 @@ export class PostModalPage {
     } catch(e) {
       console.log(e);
     }
+  }
+
+  removeMedia() {
+    console.log(this.takenPhotos.length)
+    console.log(this.videoThumbnail)
+    this.takenPhotos.length = 0;
+    this.videoURL = '';
+    this.videoThumbnail = '';
   }
 
   exitPostModal() {

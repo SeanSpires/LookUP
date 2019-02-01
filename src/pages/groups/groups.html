@@ -41,8 +41,8 @@
       <ion-list-header>
         Your Groups
       </ion-list-header>
-      <ion-item-sliding *ngFor= "let group of groupService.subscribedGroups" (click)="setCurrentSelectedGroup(group)"> 
-        <ion-item>
+      <ion-item-sliding *ngFor= "let group of groupService.subscribedGroups"> 
+        <ion-item (click)="setCurrentSelectedGroup(group)">
           <ion-avatar item-start>
             <img src={{group.groupPhoto}}>
           </ion-avatar>
@@ -53,7 +53,7 @@
             <ion-icon name="text"></ion-icon>
             Text
           </button>
-          <button ion-button color="danger" icon-start>
+          <button ion-button color="danger" icon-start (click)="unsubToGroup(group)">
             <ion-icon name="trash"></ion-icon>
             Trash
           </button>

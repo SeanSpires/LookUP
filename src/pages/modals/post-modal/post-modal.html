@@ -9,14 +9,14 @@
 </ion-header>
  
 
-<ion-content padding>
+<ion-content padding style="background-color: rgb(247,247,247)"> 
   <div style="text-align: center">
         <button ion-button (click)="takePhoto()"><ion-icon name="camera" style="margin-right: 3px"></ion-icon>Take Photo</button>
         <button ion-button (click)="openImageGallery()"><ion-icon name="image" style="margin-right: 3px"></ion-icon>Select Photos</button>      
   </div>
   <button ion-button full (click)="captureVideo()" style="margin-top: 12px"><ion-icon name="videocam" style="margin-right: 3px"></ion-icon>Capture Video</button>
   <!-- <p align="center"><img src="{{ myPhoto }}"></p> -->
-  <div *ngIf="takenPhotos.length > 0" >
+  <div *ngIf="takenPhotos.length > 0" id='imageContainer'>
       <span *ngFor="let photo of takenPhotos">
           <img src="{{ photo }}" style="width: 100px; height: 100px;">
       </span>
@@ -26,13 +26,13 @@
   <p>Filename: {{filename}}</p>
   <p>Path: {{path}}</p> -->
   <!-- <p>Thumbnail: {{thumbnail}}</p> -->
-  <div *ngIf="!(!videoThumbnail || 0 === videoThumbnail.length)">
+  <div *ngIf="!(!videoThumbnail || 0 === videoThumbnail.length)" (click)="play()">
       <ion-fab>
           <ion-icon name="play" class="playButton"></ion-icon>
       </ion-fab> 
     <img src="{{videoThumbnail}}" style="width: 100px; height: 100px;">   
-    
   </div>
+  <button ion-button color="danger" (click)="removeMedia()" *ngIf="takenPhotos.length > 0 || videoThumbnail !== ''">clear</button>
   <ion-list>
     <ion-list-header>
         Post Details

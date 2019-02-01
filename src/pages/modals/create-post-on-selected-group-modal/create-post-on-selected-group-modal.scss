@@ -1,7 +1,13 @@
 page-create-post-on-selected-group-modal {
+    
+    #imageContainer {
+        margin-top: 10px;
+    }
+    
     .list-header-md {
         border-top: none;
         border-bottom: 2px solid rgb(147, 126, 223);
+        background-color: rgb(247,247,247);
         color: black;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -16,6 +22,20 @@ page-create-post-on-selected-group-modal {
     }
     .button-md {
         text-transform: none;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
     }
+    .label-md {
+        text-transform: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .playButton {
+        color: white;
+        border: 2px solid white;
+        border-radius: 100%;
+        text-align: center;
+        margin-top: 30px;
+        padding: 5px;
+        margin-left: 35px;
+    }  
 }

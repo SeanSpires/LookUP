@@ -11,13 +11,25 @@ page-post-modal {
         margin-top: 40px;
     }
 
+    #imageContainer {
+        margin-top: 10px;
+    }
+
+    .label-md {
+        text-transform: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
     .list-header-md {
         border-top: none;
         border-bottom: 2px solid rgb(147, 126, 223);
+        background-color: rgb(247,247,247);
         color: black;
         letter-spacing: 1px;
         text-transform: uppercase;
     }
+    
 
     .list-md {
         border-bottom: 2px rgb(235, 235, 237) solid 

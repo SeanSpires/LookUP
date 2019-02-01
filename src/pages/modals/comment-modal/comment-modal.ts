@@ -25,7 +25,7 @@ export class CommentModalPage {
   @ViewChild('myvideo') myVideo: any;
   videoURL: any;
   takenPhotos: any[] = [];
-  videoThumbnail: String;
+  videoThumbnail: string = '';
   myPhoto: any;
   path: string;
   filename: string;
@@ -171,6 +171,12 @@ export class CommentModalPage {
     } catch(e) {
       console.log(e);
     }
+  }
+
+  removeMedia() {
+    this.takenPhotos.length = 0;
+    this.videoURL = '';
+    this.videoThumbnail = '';
   }
 
   exitPostModal() {

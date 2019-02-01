@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, group } from '@angular/core';
 import { IonicPage, NavController, NavParams, PopoverController, AlertController, ModalController } from 'ionic-angular';
 import { PopoverComponent } from '../../components/popover/popover';
 import { GroupModalPage } from '../modals/groupModal/groupModal';
@@ -84,6 +84,13 @@ export class GroupsPage {
       audio.play();
     })
   }
+
+  unsubToGroup(group) {
+    console.log(group)
+    // let groupIndex = this.groupService.subscribedGroups.indexOf(group.groupName);
+    // this.groupService.subscribedGroups.splice(groupIndex,1);
+    // this.groupService.recommendedGroups.unshift(group);
+    };
 }
 
 

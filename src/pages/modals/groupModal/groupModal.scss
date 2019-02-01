@@ -29,7 +29,13 @@ page-modal {
 
     .button-md {
         text-transform: none;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+    }
+
+    .label-md {
+        text-transform: none;
+        font-size: 20px;
+        font-weight: bold;
     }
 
     #groupPhoto {

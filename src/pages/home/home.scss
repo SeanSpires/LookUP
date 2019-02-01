@@ -16,6 +16,12 @@ page-home {
         background-color: none !important;
     }
 
+    .label-md {
+        text-transform: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
     .contentBack {
         background-color: rgb(247, 247, 247)
     }  
@@ -40,6 +46,12 @@ page-home {
     .item-md {
         background: none;
     }
+
+    .button-md {
+        text-transform: none;
+        letter-spacing: 2px;
+    }
+    
 
     .playButton {
         color: white;
