@@ -44,7 +44,7 @@
       </ion-item>
   </ion-list>
   <ion-list radio-group>
-      <ion-label id="groupsToPostToLabel">Group to Post to</ion-label>
+      <ion-list-header id="groupsToPostToLabel">Group to Post to</ion-list-header>
       <div *ngFor="let group of groupService.subscribedGroups">
           <ion-item>
               <ion-label>{{group.groupName}}</ion-label>
