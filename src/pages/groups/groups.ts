@@ -17,6 +17,7 @@ import Axios from 'axios';
 export class GroupsPage {
   speechArray: string[] = [];
   showNewGroup: boolean = false;
+  searchInput: string = "";
   lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
   answer: any;
 

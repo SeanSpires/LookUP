@@ -18,6 +18,7 @@ export class HomePage  {
   audioURI: any;
   speechArray: string[] = [];
   answer: any;
+  searchInput: string = "";
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
               public postService: PostService,
