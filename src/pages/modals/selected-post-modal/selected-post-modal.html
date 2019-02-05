@@ -68,7 +68,7 @@
               </ion-slides>
             <ion-card-content>
               <p style="line-height: 24px;">{{comment.description}}</p>
-              <div (click)='playAudio(comment.description)'>
+              <div (click)='playAudio(comment.description)' *ngIf="!audioSelected">
                   <img src="../../../assets/imgs/volume.png" style="width:30px; margin-left:230px;">
               </div>
             </ion-card-content>

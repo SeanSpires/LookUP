@@ -4,8 +4,8 @@
         [(ngModel)]="searchInput"
         [showCancelButton]="shouldShowCancel"
  >
-</ion-searchbar>
-</ion-navbar>
+    </ion-searchbar>
+  </ion-navbar>
 </ion-header>
 <ion-content padding class="contentBack">
     <ion-fab bottom right slot="fixed" (click)="listenForSpeech()">
@@ -17,8 +17,10 @@
     <button ion-button full id="uploadBtn" (click)="presentModal()">Ask Something</button>
     <ion-card>
       <ion-card-content *ngIf="answer !== undefined">
-        <p >
-          {{answer.data.text}}
+        <h2>Virtual Assistant <ion-icon name='mic'></ion-icon></h2>
+        <hr>
+        <p>
+            {{answer.data.text}}
         </p>
       </ion-card-content>
     </ion-card>
@@ -49,10 +51,10 @@
                         </ion-fab>
                     </ion-slide>
                 </ion-slides>
-              </div>
               <ion-card-content>
                 <p style="line-height: 24px;">{{post.desc}}</p>
               </ion-card-content>
+            </div>
                 <ion-row>
                   <ion-col>
                     <button ion-button color="primary" clear small icon-start>
@@ -66,16 +68,18 @@
                       {{post.comments.length}} Comments
                     </button>
                   </ion-col>
-                  <!-- <ion-col align-self-center text-center>
-                    <ion-note>
-                      {{post.date}}
-                    </ion-note>
-                  </ion-col> -->
                   <ion-col>
-                      <div (click)='playAudio(post.desc)'>
+                      <div (click)='playAudio(post.desc)' *ngIf="!audioSelected">
                           <img src="../../../assets/imgs/volume.png" style="width:30px;">
                       </div>
                   </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col align-self-center text-center>
+                        <ion-note>
+                          {{post.date}}
+                        </ion-note>
+                      </ion-col>
                 </ion-row>
               </ion-card>
             </div>   

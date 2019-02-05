@@ -15,6 +15,8 @@ export class SelectedPostModalPage {
   videoOptions: VideoOptions
   lookUpApiUrl = "https://lookupapiofficial.azurewebsites.net";
   audioURI: any;
+  audioSelected: boolean = false;
+
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public viewCtrl: ViewController,
@@ -52,6 +54,7 @@ export class SelectedPostModalPage {
 
   playAudio(description) {
     console.log(description);
+    this.toggleAudioButton();
     Axios.post(this.lookUpApiUrl + '/api/texttospeech', {
       Text: description
     }).then(uri =>{ 
@@ -59,7 +62,14 @@ export class SelectedPostModalPage {
       const audio = new Audio(this.audioURI.data);
       console.log(this.audioURI);
       audio.play();
+      this.toggleAudioButton();
     });
+  }
+
+  private toggleAudioButton = () => {
+    console.log(this.audioSelected);
+    this.audioSelected = !this.audioSelected;
+
   }
 }
 

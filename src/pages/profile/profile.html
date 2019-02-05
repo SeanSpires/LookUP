@@ -1,12 +1,24 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>profile</ion-title>
-    
+  <ion-navbar color="primary">
+    <ion-title>Profile</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding class="contentBack">
+  <div id='contentContainer'>
+    <img src="../../assets/imgs/sean.jpg" id='profileAvatar'>
+  </div>
+  <h2 style="text-align:center; text-decoration: underline">Sean Spires</h2>
+  <div style="margin-top:20px;">
+      <ion-list style="background-color:black">
+          <ion-item-divider>
+            <ion-label style="color:black; font-weight:bold">
+              Profile Details
+            </ion-label>
+          </ion-item-divider>
+        
+          <ion-item><ion-label>Email: <span style="margin-left:20px">seanspires123@gmail.com</span></ion-label></ion-item>
+          <ion-item><ion-label>Ph: <span style="margin-left:20px">09 537 421 333</span></ion-label></ion-item>
+      </ion-list>
+  </div>
 </ion-content>

@@ -19,6 +19,7 @@ export class HomePage  {
   speechArray: string[] = [];
   answer: any;
   searchInput: string = "";
+  audioSelected: boolean = false;
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
               public postService: PostService,
@@ -78,6 +79,7 @@ export class HomePage  {
 
   playAudio(description) {
     console.log(description);
+    this.toggleAudioButton();
     Axios.post(this.lookUpApiUrl + '/api/texttospeech', {
       Text: description
     }).then(uri =>{ 
@@ -85,7 +87,14 @@ export class HomePage  {
       this.audioURI = uri
       const audio = new Audio(this.audioURI.data);
       audio.play();
+      this.toggleAudioButton();
     });
+  }
+
+  private toggleAudioButton = () => {
+    console.log(this.audioSelected);
+    this.audioSelected = !this.audioSelected;
+
   }
 }
 

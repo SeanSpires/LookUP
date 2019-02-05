@@ -20,12 +20,14 @@
    >
   </ion-searchbar>
   <ion-card>
-      <ion-card-content *ngFor="let speech of speechArray">
+      <ion-card-content *ngIf="answer !== undefined">
+        <h2>Virtual Assistant <ion-icon name='mic'></ion-icon></h2>
+        <hr>
         <p>
-          {{speech}}
+            {{answer.data.text}}
         </p>
       </ion-card-content>
-    </ion-card>
+  </ion-card>
     <ion-fab bottom right slot="fixed" (click)="listenForSpeech()">
         <button ion-fab color="secondary">
           <ion-icon name="mic"></ion-icon>

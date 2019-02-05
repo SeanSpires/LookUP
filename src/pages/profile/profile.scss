@@ -1,3 +1,15 @@
 page-profile {
 
+    #contentContainer {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    #profileAvatar {
+        border-radius: 100%;
+        width: 150px;
+    }
+    .contentBack {
+        background-color: rgb(247, 247, 247)
+    }
 }
