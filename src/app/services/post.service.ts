@@ -26,7 +26,7 @@ export class PostService {
         avatar: "../assets/imgs/rohaan.jpg",
         mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
         user: "Rohaan Mistry",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''
       },
       {
@@ -35,7 +35,7 @@ export class PostService {
         avatar: "../assets/imgs/anime.jpg",
         mediaFiles: ["../assets/imgs/sonata.png"],
         user: "Hansa Asrani",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
       {
@@ -45,7 +45,7 @@ export class PostService {
         avatar: "../assets/imgs/cartoonSarah.png",
         mediaFiles: undefined,
         user: "Sarah Jane",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       }
     
@@ -68,7 +68,7 @@ export class PostService {
         avatar: "../assets/imgs/bharat.jpg",
         mediaFiles: [],
         user: "Bharat Rasali",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''
       },
       {
@@ -77,7 +77,7 @@ export class PostService {
         avatar: "../assets/imgs/anime.jpg",
         mediaFiles: ["../assets/imgs/jeep.png"],
         user: "Hansa Asrani",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
       {
@@ -86,7 +86,7 @@ export class PostService {
         avatar: "../assets/imgs/rohaan.jpg",
         mediaFiles: [],
         user: "Rohaan Mistry",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
     ],
@@ -121,7 +121,7 @@ export class PostService {
         avatar: "../assets/imgs/andrew.jpg",
         mediaFiles: [],
         user: "Andrew Hu",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''
       },
       {
@@ -130,7 +130,7 @@ export class PostService {
         avatar: "../assets/imgs/samuel.jpg",
         mediaFiles: ["../assets/imgs/tennisServe2.png"],
         user: "Jordan Pan",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
       {
@@ -139,7 +139,7 @@ export class PostService {
         avatar: "../assets/imgs/cartoonSarah.png",
         mediaFiles: [],
         user: "Rachel Michelle",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       }
     
@@ -162,7 +162,7 @@ export class PostService {
         avatar: "../assets/imgs/rohaan.jpg",
         mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
         user: "Rohaan Mistry",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''
       },
       {
@@ -171,7 +171,7 @@ export class PostService {
         avatar: "../assets/imgs/anime.jpg",
         mediaFiles: ["../assets/imgs/sonata.png"],
         user: "Hansa Asrani",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
       {
@@ -181,7 +181,7 @@ export class PostService {
         avatar: "../assets/imgs/cartoonSarah.png",
         mediaFiles: undefined,
         user: "Sarah Jane",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       }
     
@@ -204,7 +204,7 @@ export class PostService {
         avatar: "../assets/imgs/bharat.jpg",
         mediaFiles: [],
         user: "Bharat Rasali",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''
       },
       {
@@ -213,7 +213,7 @@ export class PostService {
         avatar: "../assets/imgs/anime.jpg",
         mediaFiles: ["../assets/imgs/jeep.png"],
         user: "Hansa Asrani",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
       {
@@ -222,7 +222,7 @@ export class PostService {
         avatar: "../assets/imgs/rohaan.jpg",
         mediaFiles: [],
         user: "Rohaan Mistry",
-        videoURL: '',
+        videoUrl: '',
         videoThumbnail: ''                
       },
     ],

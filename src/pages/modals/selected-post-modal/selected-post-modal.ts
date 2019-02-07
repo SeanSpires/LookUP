@@ -37,6 +37,7 @@ export class SelectedPostModalPage {
 
   
     async playVideo(videoURL) {
+      console.log(videoURL)
       try {
         this.videoOptions = {
           volume: 1,

@@ -25,7 +25,21 @@ export class GroupService {
         groupPhoto: "../assets/imgs/cartoonPiano.jpg",
         isPrivate: false,
         groupPassword: '',
-        posts: [{
+        posts: [
+          {
+            desc: "Enjoy an all new refreshing range of coke this summer!",
+            id: 1,
+            date: "2hr",
+            avatar: "../assets/imgs/coke.png",
+            postOrigin: "Sponsored",
+            videoThumbnail: '',
+            videoURL: '',
+            mediaFiles: ["../assets/imgs/cokeRange.png"],
+            user: "Coca Cola",
+            comments: [],
+            favourites: 22
+          },
+          {
           desc: "Could someone help me with my finger placement for the trills in Sonata in C Major by Mozart",
           id: 1,
           date: "50min",
@@ -42,7 +56,7 @@ export class GroupService {
             mediaFiles: ["../assets/imgs/pianoHands2.png", "../assets/imgs/sonata.png", "../assets/imgs/trills.jpg"],
             user: "Rohaan Mistry",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
             
           },
           {
@@ -52,7 +66,7 @@ export class GroupService {
             mediaFiles: ["../assets/imgs/sonata.png"],
             user: "Hansa Asrani",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
             
                           
           },
@@ -64,7 +78,7 @@ export class GroupService {
             mediaFiles: undefined,
             user: "Sarah Jane",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
                             
           }
         
@@ -75,7 +89,7 @@ export class GroupService {
     
     {
         groupName: "Tennis",
-        groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+        groupDescription: "A group for all tennis help, feel free to ask questions for both low and high level tennis.",
         groupPhoto: "../assets/imgs/tennisC.jpg",
         isPrivate: false,
         groupPassword: '',
@@ -96,7 +110,7 @@ export class GroupService {
             mediaFiles: [],
             user: "Andrew Hu",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
             
           },
           {
@@ -106,7 +120,7 @@ export class GroupService {
             mediaFiles: ["../assets/imgs/tennisServe2.png"],
             user: "Jordan Pan",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
                             
           },
           {
@@ -116,7 +130,7 @@ export class GroupService {
             mediaFiles: [],
             user: "Rachel Michelle",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
                             
           }
         
@@ -127,7 +141,7 @@ export class GroupService {
 
     {
         groupName: "Cars",
-        groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+        groupDescription: "A Group For All Car Enthusiasts",
         groupPhoto: "../assets/imgs/wheelC.jpg",
         isPrivate: false,
         groupPassword: '',
@@ -148,7 +162,7 @@ export class GroupService {
             mediaFiles: [],
             user: "Bharat Rasali",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
             
           },
           {
@@ -158,7 +172,7 @@ export class GroupService {
             mediaFiles: ["../assets/imgs/jeep.png"],
             user: "Hansa Asrani",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
                             
           },
           {
@@ -168,7 +182,7 @@ export class GroupService {
             mediaFiles: [],
             user: "Rohaan Mistry",
             videoThumbnail: '',
-            videoURL: ''
+            videoUrl: ''
                             
           },
         ],
@@ -180,7 +194,7 @@ export class GroupService {
    recommendedGroups: GroupInterface[] = [
     {
         groupName: "Expert Guitar",
-        groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+        groupDescription: "High level guitar questions only",
         groupPhoto: "../assets/imgs/guitar.jpg",
         isPrivate: false,
         groupPassword: '',
@@ -189,7 +203,7 @@ export class GroupService {
     
     {
         groupName: "Culinary",
-        groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+        groupDescription: "The Culinary Group accepts all questions and answers related to cooking!",
         groupPhoto: "../assets/imgs/steak.jpg",
         isPrivate: false,
         groupPassword: '',
@@ -199,7 +213,7 @@ export class GroupService {
 
     {
         groupName: "Computer Hardware",
-        groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+        groupDescription: "Ranging from building a PC to implementing new hardwares",
         groupPhoto: "../assets/imgs/PC.png",
         isPrivate: false,
         groupPassword: '',
@@ -207,7 +221,7 @@ export class GroupService {
     },
     {
       groupName: "Makeup",
-      groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+      groupDescription: "Group dedicated for makeup help!",
       groupPhoto: "../assets/imgs/makeup.png",
       isPrivate: false,
       groupPassword: '',
@@ -215,7 +229,7 @@ export class GroupService {
     },
     {
       groupName: "Electronics",
-      groupDescription: "A group meant for grade 5 pianists to learn and help each other",
+      groupDescription: "For help with setting up, running and repairing your electronics",
       groupPhoto: "../assets/imgs/plug.jpg",
       isPrivate: false,
       groupPassword: '',

@@ -30,34 +30,34 @@ export class LoginPage {
               private alertCtrl: AlertController) {
   }
 
-  // ionViewDidLoad() {
-  //   this.groupArray = [];
-  //   Axios.get(this.lookUpApiUrl + '/api/group').then(groups => {
-  //     this.groupArray = groups.data;
-  //     console.log(this.groupArray);
-  //     this.groupArray.forEach(group => {
-  //       let groupFromCosmos = {
-  //               groupName: '',
-  //               groupDescription: '',
-  //               groupPhoto: '',
-  //               isPrivate: false,
-  //               groupPassword: '',
-  //               posts: []
-  //       }
+  ionViewDidLoad() {
+    this.groupArray = [];
+    Axios.get(this.lookUpApiUrl + '/api/group').then(groups => {
+      this.groupArray = groups.data;
+      console.log(this.groupArray);
+      this.groupArray.forEach(group => {
+        let groupFromCosmos = {
+                groupName: '',
+                groupDescription: '',
+                groupPhoto: '',
+                isPrivate: false,
+                groupPassword: '',
+                posts: []
+        }
 
-  //       groupFromCosmos.groupName = group.groupName;
-  //       groupFromCosmos.groupDescription = group.groupDescription;
-  //       groupFromCosmos.groupPhoto = group.groupPhoto;
-  //       groupFromCosmos.groupPassword = group.password;
-  //       groupFromCosmos.posts = group.posts;
-  //       group.posts.forEach(post => {
-  //         console.log(post);
-  //       });
+        groupFromCosmos.groupName = group.groupName;
+        groupFromCosmos.groupDescription = group.groupDescription;
+        groupFromCosmos.groupPhoto = group.groupPhoto;
+        groupFromCosmos.groupPassword = group.password;
+        groupFromCosmos.posts = group.posts;
+        group.posts.forEach(post => {
+          console.log(post);
+        });
 
-  //       this.groupService.subscribedGroups.unshift(groupFromCosmos);
-  //     });
-  //   })
-  // }
+        this.groupService.subscribedGroups.unshift(groupFromCosmos);
+      });
+    })
+  }
 
   onGoToLogin(){
     console.log(this.userName);

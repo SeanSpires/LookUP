@@ -5,6 +5,7 @@
         [showCancelButton]="shouldShowCancel"
  >
     </ion-searchbar>
+    <button ion-button full id="uploadBtn" (click)="presentModal()">Ask Something</button>
   </ion-navbar>
 </ion-header>
 <ion-content padding class="contentBack">
@@ -14,13 +15,14 @@
         </button>
     </ion-fab>
     <!-- <button ion-button full (click)="listenForSpeech()">Record Audio</button> -->
-    <button ion-button full id="uploadBtn" (click)="presentModal()">Ask Something</button>
+    <h2 style="text-align: center; margin-top: 10px">News Feed</h2>
+    <hr>
     <ion-card>
-      <ion-card-content *ngIf="answer !== undefined">
+      <ion-card-content>
         <h2>Virtual Assistant <ion-icon name='mic'></ion-icon></h2>
         <hr>
         <p>
-            {{answer.data.text}}
+            {{assistantReply}}
         </p>
       </ion-card-content>
     </ion-card>
@@ -74,13 +76,13 @@
                       </div>
                   </ion-col>
                 </ion-row>
-                <ion-row>
+                <!-- <ion-row>
                     <ion-col align-self-center text-center>
                         <ion-note>
                           {{post.date}}
                         </ion-note>
                       </ion-col>
-                </ion-row>
+                </ion-row> -->
               </ion-card>
             </div>   
         </div>

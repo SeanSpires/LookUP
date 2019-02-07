@@ -4,7 +4,7 @@ export interface CommentInterface {
     description: string;
     avatar: string,
     videoThumbnail: String,
-    videoURL: string
+    videoUrl: string
     mediaFiles: string[] | undefined; 
     user: string;
 }

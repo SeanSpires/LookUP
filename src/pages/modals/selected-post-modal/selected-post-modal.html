@@ -58,7 +58,7 @@
                     <img src={{file}} class="slide-image">
                 </ion-slide>
                 <ion-slide *ngIf="!(!comment.videoThumbnail || 0 === comment.videoThumbnail.length)"
-                            (click)="playVideo(comment.videoURL)"      
+                            (click)="playVideo(comment.videoUrl)"      
                 >
                     <img src={{comment.videoThumbnail}} class="slide-image">
                     <ion-fab middle middle>

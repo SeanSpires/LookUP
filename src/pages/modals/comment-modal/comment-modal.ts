@@ -58,7 +58,7 @@ export class CommentModalPage {
     avatar: '../../assets/imgs/sean.jpg',
     mediaFiles: [], // URI or Base64 Encoded
     videoThumbnail: '',
-    videoURL: '',
+    videoUrl: '',
     user: 'Sean',
   }
 
@@ -94,7 +94,7 @@ export class CommentModalPage {
       dismissOnPageChange: true
     }).present();
     this.newCommentDetails.mediaFiles = this.takenPhotos;
-    this.newCommentDetails.videoURL = this.videoURL;
+    this.newCommentDetails.videoUrl = this.videoURL;
     this.newCommentDetails.videoThumbnail = this.videoThumbnail;
     this.groupService.currentSelectedPost.comments.unshift(this.newCommentDetails);
     this.groupService.subscribedGroups.forEach(element => {

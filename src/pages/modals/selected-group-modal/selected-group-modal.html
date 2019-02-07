@@ -11,7 +11,13 @@
   
   <ion-content padding class="contentBack">
       <button ion-button full id="uploadBtn" (click)="presentModal()">Ask Something</button>
-      
+      <ion-card>
+          <ion-card-content>
+            <h2>Group Description</h2>
+            <hr>
+            <p>{{groupService.currentSelectedGroup.groupDescription}}</p>
+          </ion-card-content>
+        </ion-card>
           <ion-card (click)="setCurrentSelectedPost(post)" *ngFor="let post of groupService.currentSelectedGroup.posts">
             <ion-item>
               <ion-avatar item-start>

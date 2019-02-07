@@ -20,6 +20,7 @@ export class HomePage  {
   answer: any;
   searchInput: string = "";
   audioSelected: boolean = false;
+  assistantReply: string = 'Press the Green Button to Talk to Me!'
   constructor(public navCtrl: NavController,
               public modalController: ModalController, 
               public postService: PostService,
@@ -70,6 +71,7 @@ export class HomePage  {
     Axios.post(this.lookUpApiUrl + '/api/qna', {
       Text: data[0]
     }).then(answer => {
+      this.assistantReply = answer.data.text;
       this.answer = answer;
       console.log(this.answer);
       const audio = new Audio(this.answer.data.audio)
