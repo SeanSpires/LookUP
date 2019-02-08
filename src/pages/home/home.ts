@@ -96,7 +96,6 @@ export class HomePage  {
   private toggleAudioButton = () => {
     console.log(this.audioSelected);
     this.audioSelected = !this.audioSelected;
-
   }
 }
 
